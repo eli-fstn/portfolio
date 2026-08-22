@@ -1,0 +1,22 @@
+interface ButtonProps {
+  onClick: () => void;
+  disabled?: boolean;
+  text: React.ReactNode;
+  typography: React.ReactNode;
+  dimensions: React.ReactNode;
+  designs: React.ReactNode;
+}
+
+function Button({ text, typography, dimensions, designs, onClick, disabled = false }: ButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`transition-transform duration-100 active:scale-95 disabled:active:scale-100 ${typography} ${dimensions} ${designs}`}
+    >
+      {text}
+    </button>
+  );
+}
+
+export default Button;
