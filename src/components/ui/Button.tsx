@@ -12,7 +12,7 @@ function Button({ text, typography, dimensions, designs, onClick, disabled = fal
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`transition-transform duration-100 active:scale-95 disabled:active:scale-100 ${typography} ${dimensions} ${designs}`}
+      className={`transition-transform duration-100 active:scale-95 disabled:active:scale-100 flex flex-row items-center cursor-pointer ${typography} ${dimensions} ${designs}`}
     >
       {text}
     </button>
