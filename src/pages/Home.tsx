@@ -1,7 +1,10 @@
-import { BadgeCheck, BriefcaseBusiness, Code2, GraduationCap, FolderGit2, Share2, ArrowRight, FileText, Mail, MapPin } from "lucide-react"
+import { BadgeCheck, BriefcaseBusiness, Code2, GraduationCap, FolderGit2, Share2, ArrowRight, FileText, Mail, MapPin, } from "lucide-react"
+import { Icon } from "@iconify/react";
+import { GitHubCalendar } from "react-github-calendar";
 import Button from "../components/ui/Button"
 import profile from "../assets/elijah-festin.jpeg";
 import Boxes from "../components/ui/Boxes";
+import Footer from "../components/layout/Footer";
 
 function Home() {
 
@@ -25,10 +28,11 @@ function Home() {
       "_blank"
     );
   };
+
   return (
 
     // BODY
-    <div className="bg-white min-h-screen px-70 py-20">
+    <div className="bg-white min-h-screen px-70 pt-20">
 
       {/* HEADER */}
       <div >
@@ -250,7 +254,41 @@ function Home() {
               </p>
             </div>
           </div>
+
+          {/*  Github */}
+          <div className="col-span-5 rounded-lg bg-white p-5 border border-gray-200">
+            <p className="font-bold font-montserrat text-md flex flex-row items-center">
+              <Icon className="mr-1" icon="mdi:github" width="20" height="20" />
+              Github
+            </p>
+            
+            <div className="flex justify-center items-center mt-2">
+              <a href="https://github.com/eli-fstn" target="_blank">
+                <GitHubCalendar 
+                  username="eli-fstn"
+                  theme={{
+                    light: [
+                      "#EBEDF0", // no contributions
+                      "#9BE9A8", // low
+                      "#40C463", // moderate
+                      "#30A14E", // high
+                      "#216E39"  // very high
+                    ],
+                  }}
+                  colorScheme="light"
+                  blockSize={10}
+                  blockMargin={4}
+                  fontSize={13}
+                />
+              </a>
+            </div>
+            
+          </div>
         </div>
+      </div>
+
+      <div className="mt-20">
+        <Footer />
       </div>
     </div>
   )
