@@ -41,7 +41,7 @@ function Home() {
         <div className="flex flex-row items-stretch gap-3">
           
           {/* Image */}
-          <div className="w-35">
+          <div className="w-35 cursor-pointer">
             <img
               src={profile}
               className="w-full h-full object-cover rounded-md transition duration-200 hover:scale-105 hover:-rotate-1 hover:shadow-xl"
@@ -106,7 +106,7 @@ function Home() {
                 }
                 typography="text-xs"
                 dimensions="px-4 py-2"
-                designs="border border-gray-300 bg-white shadow-sm text-black rounded-md font-semibold"
+                designs="border border-gray-300 bg-white text-black rounded-md font-semibold"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ function Home() {
             {/* Category */}
             <div className="mt-2">
               <p className="font-semibold text-sm">Languages</p>
-              <div className="flex flex-row flex-wrap gap-2 my-2">
+              <div className="flex flex-row flex-wrap gap-1 my-2">
                 {languages.map((language, i) => (
                   <Boxes 
                     key={i}
@@ -161,7 +161,7 @@ function Home() {
 
             <div className="mt-5">
               <p className="font-semibold text-sm">Frameworks & Libraries</p>
-              <div className="flex flex-row flex-wrap gap-2 my-2">
+              <div className="flex flex-row flex-wrap gap-1 my-2">
                 {frameworks.map((framework, i) => (
                   <Boxes 
                     key={i}
@@ -176,7 +176,7 @@ function Home() {
 
             <div className="mt-5">
               <p className="font-semibold text-sm">Tools</p>
-              <div className="flex flex-row flex-wrap gap-2 my-2">
+              <div className="flex flex-row flex-wrap gap-1 my-2">
                 {tools.map((tool, i) => (
                   <Boxes 
                     key={i}
@@ -202,7 +202,7 @@ function Home() {
                 <div key={idx} className="flex gap-3 flex-1">
                   {/* Graph column: node + connecting line */}
                   <div className="flex flex-col items-center">
-                    <div className="relative top-0.5 w-4 h-4 rounded-full bg-white border-4 border-gray-200" />
+                    <div className="relative top-0.5 w-4 h-4 rounded-full bg-white border-2 border-gray-200" />
                     {idx !== educationData.length - 1 && (
                       <div className="w-0.5 flex-1 bg-gray-200" />
                     )} 
