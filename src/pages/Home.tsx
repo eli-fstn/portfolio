@@ -1,6 +1,9 @@
 import { BadgeCheck, BriefcaseBusiness, Code2, GraduationCap, FolderGit2, Share2, ArrowRight, FileText, Mail, MapPin, } from "lucide-react"
 import { Icon } from "@iconify/react";
 import { GitHubCalendar } from "react-github-calendar";
+import { Link } from "react-router-dom";
+import ProjectCard from "../components/ui/ProjectCard";
+import kabsupanionLogo from "../assets/projects/kabsupanion/Kabsupanion-Logo.png";
 import Button from "../components/ui/Button"
 import profile from "../assets/elijah-festin.jpeg";
 import Boxes from "../components/ui/Boxes";
@@ -133,13 +136,13 @@ function Home() {
                 <Code2 size={20} className="mr-2"/>
                 Tech Stack
               </p>
-              <p className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:scale-105 hover:text-black">
+              <Link to="/tech-stack" className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-black">
                 View All
                 <ArrowRight
                   size={14}
                   className="ml-1"
                 />
-              </p>
+              </Link>
             </div>
             
 
@@ -197,12 +200,12 @@ function Home() {
               Education
             </p>
 
-            <div className="mt-2 flex-1 flex flex-col">
+            <div className="mt-2 flex-1 flex flex-col cursor-pointer">
               {educationData.map((edu, idx) => (
                 <div key={idx} className="flex gap-3 flex-1">
                   {/* Graph column: node + connecting line */}
                   <div className="flex flex-col items-center">
-                    <div className="relative top-0.5 w-4 h-4 rounded-full bg-white border-2 border-gray-200" />
+                    <div className="relative top-0.5 w-4 h-4 rounded-full bg-white border-4 border-gray-200 transition duration-200 hover:border-black" />
                     {idx !== educationData.length - 1 && (
                       <div className="w-0.5 flex-1 bg-gray-200" />
                     )} 
@@ -211,7 +214,7 @@ function Home() {
                   {/* Info column */}
                   <div className="flex-1 flex flex-col justify-start">
                     <div className="flex flex-row justify-between">
-                      <p className="text-sm font-semibold font-montserrat">{edu.level}</p>
+                      <p className="text-sm font-semibold font-montserrat transition duration-200 hover:translate-x-1">{edu.level}</p>
                       <p className="text-xs text-gray-400">{edu.year}</p>
                     </div>
                     <p className="text-xs font-medium text-gray-800">{edu.school}</p>
@@ -228,13 +231,21 @@ function Home() {
                 <FolderGit2 size={20} className="mr-2"/>
                 Projects
               </p>
-              <p className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:scale-105 hover:text-black">
+              <Link to="/projects" className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-black">
                 View All
                 <ArrowRight
                   size={14}
                   className="ml-1"
                 />
-              </p>
+              </Link>
+
+            </div>
+            <div className="mt-2">
+              <ProjectCard
+                image={kabsupanionLogo}
+                title="Kabsupanion"
+                description="A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials."
+              />
             </div>
           </div>
 
@@ -245,13 +256,13 @@ function Home() {
                 <Share2 size={20} className="mr-2"/>
                 Socials
               </p>
-              <p className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:scale-105 hover:text-black">
+              <Link to="/socials" className="text-xs text-gray-500 font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-black">
                 View All
                 <ArrowRight
                   size={14}
                   className="ml-1"
                 />
-              </p>
+              </Link>
             </div>
           </div>
 
