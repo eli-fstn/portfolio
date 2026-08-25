@@ -4,12 +4,16 @@ import { GitHubCalendar } from "react-github-calendar";
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ui/ProjectCard";
 import kabsupanionLogo from "../assets/projects/kabsupanion/Kabsupanion-Logo.png";
+import echoLogo from "../assets/projects/echo-gwa-calculator/Echo-Logo.png";
 import Button from "../components/ui/Button"
 import profile from "../assets/elijah-festin.jpeg";
 import Boxes from "../components/ui/Boxes";
 import Footer from "../components/layout/Footer";
+import ProjectModal from "../components/ui/ProjectModal";
+import { useState } from "react";
 
 function Home() {
+  const [projectModal, setProjectModal] = useState<boolean>(false);
 
   const educationData = [
     { level: "BS Computer Science", school: "Cavite State University - Imus Campus", year: "2025 - Ongoing" },
@@ -240,13 +244,43 @@ function Home() {
               </Link>
 
             </div>
-            <div className="mt-2">
+            <div className="mt-2 grid grid-cols-4 gap-5">
+              <div className="" onClick={() => setProjectModal(true)}>
+                <ProjectCard
+                  image={kabsupanionLogo}
+                  title="Kabsupanion"
+                  description="A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials."
+                />
+              </div>
+              
               <ProjectCard
-                image={kabsupanionLogo}
-                title="Kabsupanion"
-                description="A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials."
+                image={echoLogo}
+                title="Echo - GWA Calculator"
+                description="A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released."
               />
             </div>
+
+            <ProjectModal
+              isOpen={projectModal}
+              onClose={() => setProjectModal(false)}
+              images={[kabsupanionLogo]}
+            >
+              <p className="font-bold font-montserrat text-lg">Portfolio Website</p>
+              <p className="text-sm text-gray-600 mt-2">
+                A personal portfolio built with React and TailwindCSS to showcase my projects and skills.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-4">
+                {["React", "TailwindCSS", "TypeScript"].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-3 py-1 rounded border border-gray-200 font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </ProjectModal>
           </div>
 
           {/*  Socials */}
