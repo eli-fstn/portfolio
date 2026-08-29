@@ -13,15 +13,15 @@ function Dashboard() {
   const frameworks = ["React", "TailwindCSS", "Express", "OpenCV", "Flask"]
   const tools = ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"]
 
-  const test = () => {
-  }
+  // const test = () => {
+  // }
 
-  const sendEmail = () => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=festinelijah@gmail.com",
-      "_blank"
-    );
-  };
+  // const sendEmail = () => {
+  //   window.open(
+  //     "https://mail.google.com/mail/?view=cm&fs=1&to=festinelijah@gmail.com",
+  //     "_blank"
+  //   );
+  // };
 
   return (
     <div className="bg-[#0c0c0f] min-h-screen flex">
