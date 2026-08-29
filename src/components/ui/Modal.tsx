@@ -24,7 +24,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       <div
@@ -33,9 +33,9 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 bg-white rounded-full p-1.5 border border-gray-200 hover:bg-gray-100 transition"
+          className="absolute top-3 right-3 z-10 bg-white rounded-full p-1.5 hover:scale-110 duration-200 transition"
         >
-          <X size={16} />
+          <X size={15} />
         </button>
         {children}
       </div>

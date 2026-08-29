@@ -2,4 +2,6 @@
 
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-pixel: "Geist Pixel", sans-serif;
 }

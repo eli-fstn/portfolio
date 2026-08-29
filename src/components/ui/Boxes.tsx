@@ -7,7 +7,7 @@ interface BoxProps {
 
 function Boxes({ text, typography, dimensions, designs}: BoxProps) {
   return (
-    <div className={`bg-white border border-gray-200 transition duration-150 hover:scale-105 hover:bg-black hover:text-white cursor-pointer ${typography} ${dimensions} ${designs}`}>
+    <div className={`bg-[#0c0c0f] border border-[#2a2a30] font-mono text-[#a0a0a8] transition duration-150 hover:scale-105 cursor-pointer hover:text-white ${typography} ${dimensions} ${designs}`}>
       {text}
     </div>
   )

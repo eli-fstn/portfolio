@@ -1,47 +1,45 @@
-import { ArrowLeft } from "lucide-react"
-import { Link } from "react-router-dom"
-import ProjectCard from "../components/ui/ProjectCard";
-import kabsupanionLogo from "../assets/projects/kabsupanion/Kabsupanion-Logo.png";
-import echoLogo from "../assets/projects/echo-gwa-calculator/Echo-Logo.png";
+import Sidebar from "../components/layout/Sidebar"
 
 function Projects() {
   return (
-    <div className="bg-white min-h-screen px-70 pt-20">
-      <Link to="/" className="text-xs my-10 text-gray-500 font-medium inline-flex flex-row items-center cursor-pointer transition duration-150 hover:-translate-x-1 hover:text-black">
-        <ArrowLeft
-          size={14}
-          className="mr-1"
-        />
-        Go Back
-      </Link>
+    <div className="bg-[#0c0c0f] min-h-screen flex">
 
-      {/* MAIN CONTENT */}
-      <div className="grid grid-cols-4 gap-5">
-        <ProjectCard
-          image={kabsupanionLogo}
-          title="Kabsupanion"
-          description="A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials."
+      {/* SIDEBAR */}
+      <Sidebar />
+
+      {/* BODY */}
+      <div className="relative flex-1 px-50 pt-20">
+
+        {/* Background Elements */}
+        <div
+          className="
+            pointer-events-none
+            fixed top-0 left-50
+            w-70 h-70 z--10
+            bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
+            bg-size-[15px_15px]
+            mask-[linear-gradient(135deg,black_0%,transparent_75%)]
+            [-webkit-mask-image:linear-gradient(135deg,black_0%,transparent_70%)]
+          "
         />
-        <ProjectCard
-          image={echoLogo}
-          title="Echo - GWA Calculautor"
-          description="A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released."
+        <div
+          className="
+            pointer-events-none
+            fixed bottom-0 right-0
+            w-70 h-70 z--10
+            bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
+            bg-size-[15px_15px]
+            mask-[linear-gradient(315deg,black_0%,transparent_75%)]
+            [-webkit-mask-image:linear-gradient(315deg,black_0%,transparent_70%)]
+          "
         />
-        <ProjectCard
-          image={echoLogo}
-          title="Echo - GWA Calculautor"
-          description="A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released."
-        />
-        <ProjectCard
-          image={echoLogo}
-          title="Echo - GWA Calculautor"
-          description="A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released."
-        />
-        <ProjectCard
-          image={echoLogo}
-          title="Echo - GWA Calculautor"
-          description="A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released."
-        />``
+
+        {/* Header */}
+        <div className="flex flex-col gap-5">
+          <p className="text-white font-pixel text-[2rem]">projects</p>
+          <p className="text-[#a0a0a8] text-sm font-mono">A collection of applications and projects I've built while learning and developing my skills.</p>
+        </div>
+        
       </div>
     </div>
   )
