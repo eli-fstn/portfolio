@@ -16,6 +16,7 @@ function Dashboard() {
   };
   return (
     <div className="bg-[#0c0c0f] min-h-screen flex">
+
       {/* SIDEBAR */}
       <Sidebar />
 
@@ -65,21 +66,7 @@ function Dashboard() {
               </div>
 
               <div className="flex flex-row mt-1">
-                <Button
-                  onClick={sendEmail}
-                  text={
-                    <>
-                      <Mail 
-                        size={15}
-                        className="mr-2"
-                      />
-                      Get in touch
-                    </>
-                  }
-                  typography="text-xs"
-                  dimensions="px-4 py-2"
-                  designs="border border-gray-300 bg-white text-black rounded-md font-semibold"
-                />
+                
               </div>
             </div>
           </div>
