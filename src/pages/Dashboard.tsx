@@ -139,16 +139,16 @@ function Dashboard() {
         </div>
 
         {/* Main Content */}
-        <div className="mt-20 flex flex-col gap-20">
+        <div className="mt-20 z-10 flex flex-col gap-20">
 
           {/* About Me */}
-          <div className="z-10">
+          <div className="">
             <p className="font-pixel text-md text-[#a0a0a8]">01 — about me</p>
-            <p className="text-md font-mono text-white mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
+            <p className="text-sm font-mono text-white mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
           {/* Stack*/}
-          <div className="z-10">
+          <div className="">
             <div className="flex justify-between">
               <p className="font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
               <Link to="/tech-stack" className="text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
@@ -170,12 +170,30 @@ function Dashboard() {
                     designs="rounded font-semibold"
                   />
                 ))}
+                {frameworks.map((framework, i) => (
+                  <Boxes 
+                    key={i}
+                    text={framework}
+                    typography="text-sm"
+                    dimensions="px-4 py-1"
+                    designs="rounded font-semibold"
+                  />
+                ))}
+                {tools.map((tool, i) => (
+                  <Boxes 
+                    key={i}
+                    text={tool}
+                    typography="text-sm"
+                    dimensions="px-4 py-1"
+                    designs="rounded font-semibold"
+                  />
+                ))}
               </div>
             </div>
           </div>
 
           {/* About Me */}
-          <div className="z-10">
+          <div className="">
             <div className="flex justify-between">
               <p className="font-pixel text-md text-[#a0a0a8]">02 — projects</p>
               <Link to="/projects" className="text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
@@ -189,7 +207,7 @@ function Dashboard() {
           </div>
 
           {/* Github */}
-          <div className="z-10">
+          <div className="">
             <p className="font-pixel text-md text-[#a0a0a8]">04 — github</p>
 
             <div className="flex justify-center items-center mt-5 text-[#a0a0a8] [&_svg]:overflow-visible">

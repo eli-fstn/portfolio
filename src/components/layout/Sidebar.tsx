@@ -11,15 +11,15 @@ function Sidebar() {
 
       {/* Routes */}
       <div className="flex flex-col gap-5 text-[#a0a0a8] mt-10 text-sm font-mono">
-        <Link to="projects" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
+        <Link to="/projects" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
           Projects
         </Link>
 
-        <Link to="tech-stack" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
+        <Link to="/tech-stack" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
           Stack
         </Link>
 
-        <Link to="socials" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
+        <Link to="/socials" className="inline-flex w-fit items-center transition duration-200 hover:text-white hover:translate-x-1.5">
           Socials
         </Link>
       </div>
