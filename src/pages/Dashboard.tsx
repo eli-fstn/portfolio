@@ -1,4 +1,5 @@
 import { BadgeCheck, ArrowUpRight, MapPin, ArrowRight } from "lucide-react"
+import { useEffect, useRef } from "react";
 import profile from "../assets/elijah-festin.jpeg";
 import profile2 from "../assets/yuta.jpg";
 import Sidebar from "../components/layout/Sidebar";
@@ -7,21 +8,42 @@ import Boxes from "../components/ui/Boxes";
 import { GitHubCalendar } from "react-github-calendar";
 import Footer from "../components/layout/Footer";
 import PixelTransition from "../components/ui/PixelTransition";
+import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
+import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
+import CoverflowCarousel from "../components/ui/CoverflowCarousel";
+import { getTechStack } from "../data/techStack";
 
 function Dashboard() {
-  const languages = ["HTML", "CSS", "JavaScript", "TypeScript", "Java", "Python", "SQL"];
-  const frameworks = ["React", "TailwindCSS", "Express", "OpenCV", "Flask"]
-  const tools = ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"]
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { languages, frameworks, tools } = getTechStack();
 
-  // const test = () => {
-  // }
+  const projects = [
+    { image: kabsupanion, title: "Kabsupanion", description: "A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials." },
+    { image: echo, title: "Echo - GWA Calculator", description: "A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released." },
+  ];
 
-  // const sendEmail = () => {
-  //   window.open(
-  //     "https://mail.google.com/mail/?view=cm&fs=1&to=festinelijah@gmail.com",
-  //     "_blank"
-  //   );
-  // };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const root = sectionRef.current;
+    if (!root) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const elements = root.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="bg-[#0c0c0f] min-h-screen flex">
@@ -30,7 +52,7 @@ function Dashboard() {
       <Sidebar />
 
       {/* BODY */}
-      <div className="relative flex-1 px-50 pt-20">
+      <div ref={sectionRef} className="relative flex-1 px-50 pt-20">
 
         {/* Background Elements */}
         <div
@@ -57,7 +79,7 @@ function Dashboard() {
         />
 
         {/* HEADER */}
-        <div className="flex justify-center items-center z-10">
+        <div className="animate-on-scroll flex justify-center items-center z-10">
 
           {/* Parent Div */}
           <div className="flex flex-row items-stretch gap-5">
@@ -80,9 +102,9 @@ function Dashboard() {
                   />
                 }
                 gridSize={10}
-                pixelColor="#ffffff"
+                pixelColor="#f4f4f5"
                 once={false}
-                animationStepDuration={0.4}
+                animationStepDuration={0.3}
                 className="custom-pixel-card"
               />
             </div>
@@ -90,7 +112,7 @@ function Dashboard() {
             {/* Information */}
             <div className="flex flex-col items-start justify-center">
               <div>
-                <p className="font-bold font-pixel text-white text-[2rem] flex flex-row items-center">
+                <p className="font-bold font-pixel text-[#f4f4f5] text-[2rem] flex flex-row items-center">
                   Elijah Festin
                   <span className="ml-1">
                     <BadgeCheck
@@ -108,26 +130,26 @@ function Dashboard() {
                   Cavite, Philippines
                 </p>
 
-                <p className="font-medium my-2 text-white font-mono">
+                <p className="font-medium my-2 text-[#f4f4f5] font-mono">
                   BSCS Student <span className="font-light text-[#a0a0a8]">|</span> Aspiring Software Engineer
                 </p>
               </div>
 
               {/* Links */}
               <div className="flex flex-row gap-5 cursor-pointer">
-                <a href="https://github.com/eli-fstn" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://github.com/eli-fstn" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   github
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
                   </span>
                 </a>
-                <a href="https://web.facebook.com/itz.thelijah/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://web.facebook.com/itz.thelijah/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   facebook
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
                   </span>
                 </a>
-                <a href="https://www.instagram.com/e.fstn_/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://www.instagram.com/e.fstn_/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   instagram
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
@@ -143,15 +165,15 @@ function Dashboard() {
 
           {/* About Me */}
           <div className="">
-            <p className="font-pixel text-md text-[#a0a0a8]">01 — about me</p>
-            <p className="text-sm font-mono text-white mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
+            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">01 — about me</p>
+            <p className="animate-on-scroll text-sm font-mono text-[#f4f4f5] mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
           {/* Stack*/}
           <div className="">
             <div className="flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
-              <Link to="/tech-stack" className="text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
+              <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
+              <Link to="/tech-stack" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
                   size={10}
@@ -160,7 +182,7 @@ function Dashboard() {
               </Link>
             </div>
             <div className="mt-5">
-              <div className="flex flex-row flex-wrap gap-3 my-2">
+              <div className="animate-on-scroll flex flex-row flex-wrap gap-3 my-2">
                 {languages.map((language, i) => (
                   <Boxes 
                     key={i}
@@ -192,11 +214,11 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* About Me */}
+          {/* Projects */}
           <div className="">
             <div className="flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">02 — projects</p>
-              <Link to="/projects" className="text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
+              <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">03 — projects</p>
+              <Link to="/projects" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
                   size={10}
@@ -204,13 +226,16 @@ function Dashboard() {
                 />
               </Link>
             </div>
+            <div className="mt-5 animate-on-scroll">
+              <CoverflowCarousel items={projects}  slideWidth={340} slideHeight={191} />
+            </div>
           </div>
 
           {/* Github */}
           <div className="">
-            <p className="font-pixel text-md text-[#a0a0a8]">04 — github</p>
+            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">04 — github</p>
 
-            <div className="flex justify-center items-center mt-5 text-[#a0a0a8] [&_svg]:overflow-visible">
+            <div className="animate-on-scroll flex justify-center items-center mt-5 text-[#8a8a92] [&_svg]:overflow-visible">
               <a href="https://github.com/eli-fstn" target="_blank">
                 <GitHubCalendar
                   username="eli-fstn"
@@ -248,7 +273,7 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-30">
           <Footer />
         </div>
       </div>

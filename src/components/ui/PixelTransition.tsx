@@ -119,7 +119,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
       className={`
         ${className}
         bg-[#222]
-        text-white
+        text-[#f4f4f5]
         rounded-md
         w-75
         max-w-full
@@ -142,14 +142,14 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
 
       <div
         ref={activeRef}
-        className="absolute inset-0 w-full h-full z-[2]"
+        className="absolute inset-0 w-full h-full z-2"
         style={{ display: 'none' }}
         aria-hidden={!isActive}
       >
         {secondContent}
       </div>
 
-      <div ref={pixelGridRef} className="absolute inset-0 w-full h-full pointer-events-none z-[3]" />
+      <div ref={pixelGridRef} className="absolute inset-0 w-full h-full pointer-events-none z-3" />
     </div>
   );
 };
