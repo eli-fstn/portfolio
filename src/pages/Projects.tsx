@@ -1,7 +1,5 @@
 import Sidebar from "../components/layout/Sidebar";
 import ProjectCard from "../components/ui/ProjectCard";
-import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
-import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import Footer from "../components/layout/Footer";
 import { useEffect, useRef } from "react";
 
@@ -22,7 +20,7 @@ function Projects() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     const elements = root.querySelectorAll(".animate-on-scroll");
@@ -33,20 +31,20 @@ function Projects() {
 
   const projects = [
     {
-      image: kabsupanion,
       title: "Kabsupanion",
       type: "Front-end Dev | Web App",
       stack: ["React", "TailwindCSS", "Javascript", "Vite"],
       description:
-        "Kabsupanion is a section-centric academic web application developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
+        "Kabsupanion is a section-centric student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
+      link: "https://kabsupanion.vercel.app"
     },
     {
-      image: echo,
       title: "Echo - GWA Calculator",
       type: "Web App",
       stack: ["React", "TailwindCSS", "Typescript"],
       description:
         "Echo is a client-side web application for calculating a student's General Weighted Average (GWA) and predicting Latin honors. It provides a compact workflow for entering subjects (name, grade, units), reviewing weighted totals, configuring academic policy, and exporting a printable summary report as a PNG image.",
+      link: "https://echo-gwa-calculator.vercel.app"
     },
   ];
 

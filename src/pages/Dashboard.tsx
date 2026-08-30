@@ -36,7 +36,7 @@ function Dashboard() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     const elements = root.querySelectorAll(".animate-on-scroll");
@@ -171,9 +171,9 @@ function Dashboard() {
 
           {/* Stack*/}
           <div className="">
-            <div className="flex justify-between">
-              <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
-              <Link to="/tech-stack" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
+            <div className="animate-on-scroll flex justify-between">
+              <p className="font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
+              <Link to="/tech-stack" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
                   size={10}
@@ -216,9 +216,9 @@ function Dashboard() {
 
           {/* Projects */}
           <div className="">
-            <div className="flex justify-between">
-              <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">03 — projects</p>
-              <Link to="/projects" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
+            <div className="animate-on-scroll flex justify-between">
+              <p className="font-pixel text-md text-[#a0a0a8]">03 — projects</p>
+              <Link to="/projects" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
                   size={10}
