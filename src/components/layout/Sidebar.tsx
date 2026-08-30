@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { label } from "motion/react-client";
 
 interface Navigation {
   label: string;
