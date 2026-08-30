@@ -85,7 +85,7 @@ function Projects() {
 
         {/* Header */}
         <div className="animate-on-scroll flex flex-col gap-5">
-          <p className="text-white font-pixel text-[2rem]">projects</p>
+          <p className="text-[#f4f4f5] font-pixel text-[2rem]">projects</p>
           <p className="text-[#a0a0a8] text-sm font-mono">A collection of applications and projects I've built while learning and developing my skills.</p>
         </div>
         

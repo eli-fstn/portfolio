@@ -61,7 +61,7 @@ export default function CoverflowCarousel({
           onClick={prev}
           disabled={index === 0}
           aria-label="Previous project"
-          className="absolute left-2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-[#151518] border border-[#2a2a30] text-[#a0a0a8] transition duration-200 hover:text-white hover:border-[#3a3a42] disabled:opacity-0 disabled:pointer-events-none"
+          className="absolute left-2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-[#151518] border border-[#2a2a30] text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] hover:border-[#3a3a42] disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronLeft size={18} />
         </button>
@@ -119,7 +119,7 @@ export default function CoverflowCarousel({
           onClick={next}
           disabled={index === items.length - 1}
           aria-label="Next project"
-          className="absolute right-2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-[#151518] border border-[#2a2a30] text-[#a0a0a8] transition duration-200 hover:text-white hover:border-[#3a3a42] disabled:opacity-0 disabled:pointer-events-none"
+          className="absolute right-2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-[#151518] border border-[#2a2a30] text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] hover:border-[#3a3a42] disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronRight size={18} />
         </button>
@@ -127,8 +127,8 @@ export default function CoverflowCarousel({
 
       {/* Title / description — swaps with a soft fade+rise each time index changes */}
       <div key={index} className="text-center coverflow-fade-in">
-        <p className="font-pixel font-bold text-white text-[1.5rem]">{current.title}</p>
-        <p className="font-mono text-sm text-[#a0a0a8] mt-2">{current.description}</p>
+        <p className="font-pixel font-bold text-[#f4f4f5] text-[1.5rem]">{current.title}</p>
+        <p className="font-mono text-sm text-[#8a8a92] mt-2">{current.description}</p>
       </div>
 
       {/* Dots */}

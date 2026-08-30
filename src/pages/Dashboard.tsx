@@ -11,13 +11,11 @@ import PixelTransition from "../components/ui/PixelTransition";
 import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
 import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import CoverflowCarousel from "../components/ui/CoverflowCarousel";
+import { getTechStack } from "../data/techStack";
 
 function Dashboard() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  const languages = ["HTML", "CSS", "JavaScript", "TypeScript", "Java", "Python", "SQL"];
-  const frameworks = ["React", "TailwindCSS", "Express", "OpenCV", "Flask"]
-  const tools = ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"]
+  const { languages, frameworks, tools } = getTechStack();
 
   const projects = [
     { image: kabsupanion, title: "Kabsupanion", description: "A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials." },
@@ -25,6 +23,7 @@ function Dashboard() {
   ];
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const root = sectionRef.current;
     if (!root) return;
 
@@ -103,7 +102,7 @@ function Dashboard() {
                   />
                 }
                 gridSize={10}
-                pixelColor="#ffffff"
+                pixelColor="#f4f4f5"
                 once={false}
                 animationStepDuration={0.3}
                 className="custom-pixel-card"
@@ -113,7 +112,7 @@ function Dashboard() {
             {/* Information */}
             <div className="flex flex-col items-start justify-center">
               <div>
-                <p className="font-bold font-pixel text-white text-[2rem] flex flex-row items-center">
+                <p className="font-bold font-pixel text-[#f4f4f5] text-[2rem] flex flex-row items-center">
                   Elijah Festin
                   <span className="ml-1">
                     <BadgeCheck
@@ -131,26 +130,26 @@ function Dashboard() {
                   Cavite, Philippines
                 </p>
 
-                <p className="font-medium my-2 text-white font-mono">
+                <p className="font-medium my-2 text-[#f4f4f5] font-mono">
                   BSCS Student <span className="font-light text-[#a0a0a8]">|</span> Aspiring Software Engineer
                 </p>
               </div>
 
               {/* Links */}
               <div className="flex flex-row gap-5 cursor-pointer">
-                <a href="https://github.com/eli-fstn" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://github.com/eli-fstn" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   github
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
                   </span>
                 </a>
-                <a href="https://web.facebook.com/itz.thelijah/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://web.facebook.com/itz.thelijah/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   facebook
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
                   </span>
                 </a>
-                <a href="https://www.instagram.com/e.fstn_/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#a0a0a8] transition duration-200 hover:text-white">
+                <a href="https://www.instagram.com/e.fstn_/" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   instagram
                   <span>
                     <ArrowUpRight size={15} className="ml-1"/>
@@ -167,14 +166,14 @@ function Dashboard() {
           {/* About Me */}
           <div className="">
             <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">01 — about me</p>
-            <p className="animate-on-scroll text-sm font-mono text-white mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
+            <p className="animate-on-scroll text-sm font-mono text-[#f4f4f5] mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
           {/* Stack*/}
           <div className="">
             <div className="flex justify-between">
               <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
-              <Link to="/tech-stack" className="animate-on-scroll text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
+              <Link to="/tech-stack" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
                   size={10}
@@ -219,7 +218,7 @@ function Dashboard() {
           <div className="">
             <div className="flex justify-between">
               <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">03 — projects</p>
-              <Link to="/projects" className="animate-on-scroll text-md font-pixel text-[#a0a0a8] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-white">
+              <Link to="/projects" className="animate-on-scroll text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-200 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
                   size={10}
@@ -236,7 +235,7 @@ function Dashboard() {
           <div className="">
             <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">04 — github</p>
 
-            <div className="animate-on-scroll flex justify-center items-center mt-5 text-[#a0a0a8] [&_svg]:overflow-visible">
+            <div className="animate-on-scroll flex justify-center items-center mt-5 text-[#8a8a92] [&_svg]:overflow-visible">
               <a href="https://github.com/eli-fstn" target="_blank">
                 <GitHubCalendar
                   username="eli-fstn"

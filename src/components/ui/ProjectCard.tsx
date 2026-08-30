@@ -17,6 +17,7 @@ export default function ProjectCard({ items }: CardProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     const root = sectionRef.current;
     if (!root) return;
 
@@ -51,8 +52,8 @@ export default function ProjectCard({ items }: CardProps) {
           </div>
           <div className="mt-5">
             <div className="flex justify-between items-center">
-              <p className="font-pixel font-bold text-white text-[1.5rem]">{item.title}</p>
-              <p className="font-pixel font-bold text-[#a0a0a8] text-sm">{item.type}</p>
+              <p className="font-pixel font-bold text-[#f4f4f5] text-[1.5rem]">{item.title}</p>
+              <p className="font-pixel font-bold text-[#8a8a92] text-sm">{item.type}</p>
             </div>
             <div className="flex flex-row flex-wrap gap-1 my-1">
               {item.stack.map((s, j) => (

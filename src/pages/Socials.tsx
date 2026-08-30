@@ -36,7 +36,7 @@ function Socials() {
 
         {/* Header */}
         <div className="flex flex-col gap-5">
-          <p className="text-white font-pixel text-[2rem]">socials</p>
+          <p className="text-[#f4f4f5] font-pixel text-[2rem]">socials</p>
           <p className="text-[#a0a0a8] text-sm font-mono">Find me online and connect with me through my social platforms.</p>
         </div>
         

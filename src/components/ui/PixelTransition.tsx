@@ -119,7 +119,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
       className={`
         ${className}
         bg-[#222]
-        text-white
+        text-[#f4f4f5]
         rounded-md
         w-75
         max-w-full
