@@ -1,12 +1,13 @@
 import Boxes from "./Boxes";
 import { useEffect, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 export interface Project {
-  image: string;
   stack: string[];
   title: string;
   description: string;
   type: string;
+  link: string;
 }
 
 interface CardProps {
@@ -40,17 +41,10 @@ export default function ProjectCard({ items }: CardProps) {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex flex-col gap-20 w-190">
+    <div ref={sectionRef} className="flex flex-col gap-10 w-190">
       {items.map((item, i) => (
         <div key={i} className="animate-on-scroll rounded-xl p-5 bg-linear-to-br from-white/5 to-transparent">
-          <div className="flex justify-center items-center">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-100 object-contain rounded"
-            />
-          </div>
-          <div className="mt-5">
+          <div className="">
             <div className="flex justify-between items-center">
               <p className="font-pixel font-bold text-[#f4f4f5] text-[1.5rem]">{item.title}</p>
               <p className="font-pixel font-bold text-[#8a8a92] text-sm">{item.type}</p>
@@ -67,6 +61,12 @@ export default function ProjectCard({ items }: CardProps) {
               ))}
             </div>
             <p className="font-mono text-sm text-[#a0a0a8] mt-5">{item.description}</p>
+            <a href={item.link} rel="noferrer" target="_blank" className="transition duration-200 hover:text-white cursor-pointer font-pixel text-xs text-[#a0a0a8] mt-3 flex flex-row justify-end items-center">
+              VISIT
+              <span>
+                <ArrowUpRight size={13} className="ml-1" />
+              </span>
+            </a>
           </div>
         </div>
       ))}

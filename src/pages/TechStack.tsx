@@ -21,7 +21,7 @@ function TechStack() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     const elements = root.querySelectorAll(".animate-on-scroll");
