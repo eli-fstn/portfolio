@@ -1,8 +1,8 @@
-import Sidebar from "../components/layout/Sidebar"
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, ArrowLeft, Mail } from "lucide-react";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
-import { Mail } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 interface Socials {
   platform: string;
@@ -12,6 +12,30 @@ interface Socials {
 }
 
 function Socials() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const root = sectionRef.current;
+    if (!root) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = root.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const socialMedias: Socials[] = [
     {platform: "Facebook", description: "School Purposes", username: "Elijah Festin", link: "https://web.facebook.com/itz.thelijah/"},
@@ -24,20 +48,22 @@ function Socials() {
   };
 
   return (
-    <div className="bg-[#0c0c0f] min-h-screen flex">
-
-      {/* SIDEBAR */}
-      <Sidebar />
-
-      {/* BODY */}
-      <div className="relative flex-1 px-50 pt-20">
+    <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
+        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center gap-2 text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
+          <span>
+            <ArrowLeft size={10} className="mr-1" />
+          </span>
+          go back
+        </Link>
 
         {/* Background Elements */}
         <div
           className="
             pointer-events-none
-            fixed top-0 left-50
-            w-70 h-70 z--10
+            fixed top-0 left-0
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(135deg,black_0%,transparent_75%)]
@@ -48,7 +74,8 @@ function Socials() {
           className="
             pointer-events-none
             fixed bottom-0 right-0
-            w-70 h-70 z--10
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(315deg,black_0%,transparent_75%)]
@@ -57,20 +84,20 @@ function Socials() {
         />
 
         {/* Header */}
-        <div className="flex flex-col gap-5">
+        <div className="animate-on-scroll flex flex-col gap-5">
           <p className="text-[#f4f4f5] font-pixel text-[2rem]">socials</p>
           <p className="text-[#a0a0a8] text-sm font-mono">Find me online and connect with me through my social platforms.</p>
         </div>
         
-        <div className="mt-20">
+        <div className="animate-on-scroll mt-20">
 
-          <div className="rounded-xl p-15 bg-linear-to-br from-white/5 to-transparent mb-20">
-            <div className="grid grid-cols-[2fr_1fr]">
-              <div className="">
-                <p className="text-white font-bold font-pixel text-[1.5rem]">let's get in touch</p>
-                <p className="text-[#a0a0a8] font-mono text-sm mt-1">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
+          <div className="mb-20 rounded-xl border border-[#2a2a30] bg-[#151518]/80 p-5 sm:p-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-[2fr_1fr] md:items-center">
+              <div className="min-w-0">
+                <p className="text-white font-bold font-pixel text-[1.25rem] sm:text-[1.5rem]">let's get in touch</p>
+                <p className="mt-1 text-[#a0a0a8] font-mono text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
               </div>
-              <div className="flex flex-col justify-center items-end">
+              <div className="flex flex-col items-start justify-center md:items-end">
                 <Button
                   text={
                     <>
@@ -84,16 +111,16 @@ function Socials() {
                   disabled={false}
                   onClick={sendEmail}
                 />
-                <a href="mailto:festinelijah@gmail.com" className="text-[#a0a0a8] text-sm font-mono mt-3 duration-200 transition hover:text-white">festinelijah@gmail.com</a>
+                <a href="mailto:festinelijah@gmail.com" className="mt-3 break-all text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">festinelijah@gmail.com</a>
               </div>
             </div>
           </div>
 
           {socialMedias.map((entry, i) => (
-            <div key={i} className="border-y border-y-[#2a2a30] p-10">
-              <div className="flex flex-row justify-between items-center mb-1">
-                <p className="text-xl font-pixel text-white font-bold">{entry.platform}</p>
-                <a href={entry.link} target="_blank" rel="noferrer" className="text-[#a0a0a8] text-xs font-mono flex flex-row items-center duration-200 transition hover:text-white">
+            <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-5 sm:py-6">
+              <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-lg font-pixel text-white font-bold sm:text-xl">{entry.platform}</p>
+                <a href={entry.link} target="_blank" rel="noferrer" className="flex flex-row items-center text-xs font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] break-all">
                   {entry.username}
                   <span>
                     <ArrowUpRight size={13} className="ml-1" />

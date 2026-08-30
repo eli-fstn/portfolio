@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import Sidebar from "../components/layout/Sidebar";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import Boxes from "../components/ui/Boxes";
 import Footer from "../components/layout/Footer";
 
@@ -74,20 +75,22 @@ function Education() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-[#0c0c0f] min-h-screen flex">
-      
-      {/* SIDEBAR */}
-      <Sidebar />
-
-      {/* BODY */}
-      <div className="relative flex-1 px-50 pt-20">
+    <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
+        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center gap-2 text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
+          <span>
+            <ArrowLeft size={10} className="mr-1" />
+          </span>
+          go back
+        </Link>
 
         {/* Background elemetnts */}
         <div
           className="
             pointer-events-none
-            fixed top-0 left-50
-            w-70 h-70 z--10
+            fixed top-0 left-0
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             [-webkit-mask-image:linear-gradient(135deg,black_0%,transparent_70%)]
@@ -97,7 +100,8 @@ function Education() {
           className="
             pointer-events-none
             fixed bottom-0 right-0
-            w-70 h-70 z--10
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             [-webkit-mask-image:linear-gradient(315deg,black_0%,transparent_70%)]
@@ -113,11 +117,11 @@ function Education() {
         {/* Timeline */}
         <div className="mt-20 relative">
           {/* vertical line spanning the full timeline */}
-          <div className="absolute left-1.5 top-2 bottom-2 w-px bg-[#2a2a30]" />
+          <div className="absolute left-1.5 top-2 bottom-2 block w-px bg-[#2a2a30]" />
 
-          <div className="flex flex-col gap-14">
+          <div className="flex flex-col gap-10 sm:gap-14">
             {education.map((entry, i) => (
-              <div key={i} className="animate-on-scroll group relative grid grid-cols-[14px_1fr] gap-x-6">
+              <div key={i} className="animate-on-scroll group relative grid grid-cols-[14px_1fr] gap-x-4 sm:gap-x-6">
                 {/* timeline indicator */}
                 <div className="relative flex justify-center pt-1.5">
                   {entry.current && (
@@ -133,31 +137,31 @@ function Education() {
                 </div>
 
                 {/* content */}
-                <div>
-                  <p className="font-mono text-xs text-[#8a8a92] transition-colors duration-300 group-hover:text-[#a0a0a8]">
+                <div className="min-w-0">
+                  <p className="font-mono text-[10px] text-[#8a8a92] transition-colors duration-300 group-hover:text-[#a0a0a8] sm:text-xs">
                     {entry.date}
                   </p>
 
                   <p
-                    className={`font-pixel font-bold mt-2 transition-colors duration-300 ${
+                    className={`mt-2 font-pixel font-bold transition-colors duration-300 ${
                       entry.current
-                        ? "text-white text-xl"
-                        : "text-[#e4e4e7] text-lg group-hover:text-white"
+                        ? "text-white text-lg sm:text-xl"
+                        : "text-[#e4e4e7] text-base group-hover:text-white sm:text-lg"
                     }`}
                   >
                     {entry.degree}
                   </p>
 
-                  <p className="font-mono text-sm text-[#a0a0a8] mt-1">
+                  <p className="mt-1 font-mono text-xs sm:text-sm text-[#a0a0a8] wrap-break-word">
                     {entry.school}
-                    <span className="text-[#8a8a92]"> — {entry.location}</span>
+                    <span className="text-[#8a8a92] text-xs sm:text-sm"> — {entry.location}</span>
                   </p>
 
-                  <p className="font-mono text-sm text-[#a0a0a8] mt-4 leading-relaxed">
+                  <p className="mt-4 font-mono text-xs md:text-sm leading-relaxed text-[#a0a0a8] wrap-break-word">
                     {entry.description}
                   </p>
 
-                  <div className="flex flex-row flex-wrap gap-2 mt-4">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {entry.tags?.map((tag, j) => (
                       <Boxes
                         key={j}

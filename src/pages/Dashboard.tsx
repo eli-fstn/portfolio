@@ -2,7 +2,6 @@ import { BadgeCheck, ArrowUpRight, MapPin, ArrowRight } from "lucide-react"
 import { useEffect, useRef } from "react";
 import profile from "../assets/elijah-festin.jpeg";
 import profile2 from "../assets/yuta.jpg";
-import Sidebar from "../components/layout/Sidebar";
 import { Link } from "react-router-dom";
 import Boxes from "../components/ui/Boxes";
 import { GitHubCalendar } from "react-github-calendar";
@@ -13,14 +12,45 @@ import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import CoverflowCarousel from "../components/ui/CoverflowCarousel";
 import { getTechStack } from "../data/techStack";
 
+interface EducationEntry {
+  date: string;
+  degree: string;
+  school: string;
+}
+
+interface Socials {
+  platform: string;
+  username: string;
+}
+
 function Dashboard() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const { languages, frameworks, tools } = getTechStack();
+
+  const Education: EducationEntry[] = [
+    {
+      date: "2025 - Present",
+      degree: "Bachelor of Science in Computer Science",
+      school: "Cavite State University - Imus Campus"
+    },
+    {
+      date: "2023 - 2025",
+      degree: "Information and Communication Technology (ICT)",
+      school: "St. Matthew Academy of Cavite"
+    },
+  ]
+
+  const socialMedias: Socials[] = [
+    {platform: "Facebook", username: "Elijah Festin", },
+    {platform: "Instagram", username: "e.fstn_",},
+    {platform: "Github", username: "eli-fstn",},
+  ]
 
   const projects = [
     { image: kabsupanion, title: "Kabsupanion", description: "A section-based student portal designed to organize academic tasks, schedules, and collaborative study materials." },
     { image: echo, title: "Echo - GWA Calculator", description: "A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released." },
   ];
+  const carouselSlideWidth = Math.min(340, typeof window !== "undefined" ? window.innerWidth - 56 : 340);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,20 +76,16 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="bg-[#0c0c0f] min-h-screen flex">
-
-      {/* SIDEBAR */}
-      <Sidebar />
-
-      {/* BODY */}
-      <div ref={sectionRef} className="relative flex-1 px-50 pt-20">
+    <div className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
+      <div ref={sectionRef} className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
 
         {/* Background Elements */}
         <div
           className="
             pointer-events-none
-            fixed top-0 left-50
-            w-70 h-70 z--10
+            fixed top-0 left-0
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(135deg,black_0%,transparent_75%)]
@@ -70,7 +96,8 @@ function Dashboard() {
           className="
             pointer-events-none
             fixed bottom-0 right-0
-            w-70 h-70 z--10
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(315deg,black_0%,transparent_75%)]
@@ -79,13 +106,13 @@ function Dashboard() {
         />
 
         {/* HEADER */}
-        <div className="animate-on-scroll flex justify-center items-center z-10">
+        <div className="animate-on-scroll z-10 flex justify-center">
 
           {/* Parent Div */}
-          <div className="flex flex-row items-stretch gap-5">
+          <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-stretch sm:text-left">
             
             {/* Image */}
-            <div className="w-35 cursor-pointer">
+            <div className="w-28 shrink-0 sm:w-32 lg:w-36">
               <PixelTransition
                 firstContent={
                   <img
@@ -110,19 +137,19 @@ function Dashboard() {
             </div>
 
             {/* Information */}
-            <div className="flex flex-col items-start justify-center">
+            <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
               <div>
-                <p className="font-bold font-pixel text-[#f4f4f5] text-[2rem] flex flex-row items-center">
+                <p className="flex flex-row items-center justify-center gap-2 font-bold font-pixel text-[#f4f4f5] text-[1.5rem] sm:text-[2rem] sm:justify-start">
                   Elijah Festin
-                  <span className="ml-1">
+                  <span className="inline-flex">
                     <BadgeCheck
-                      size={30}
-                      className="fill-blue-500 text-[#0c0c0f]"
+                      size={24}
+                      className="fill-blue-500 text-[#0c0c0f] sm:size-7.5"
                     />
                   </span>
                 </p>
 
-                <p className="flex flex-row items-center text-[#a0a0a8] text-sm mt-1">
+                <p className="mt-1 flex flex-row items-center justify-center text-[#a0a0a8] text-sm sm:justify-start">
                   <MapPin
                     size={15}
                     className="mr-1"
@@ -136,7 +163,7 @@ function Dashboard() {
               </div>
 
               {/* Links */}
-              <div className="flex flex-row gap-5 cursor-pointer">
+              <div className="mt-2 flex flex-wrap justify-center gap-5 sm:justify-start">
                 <a href="https://github.com/eli-fstn" target="_blank" rel="noreferrer" className="flex items-center font-mono text-xs text-[#8a8a92] transition duration-200 hover:text-[#f4f4f5]">
                   github
                   <span>
@@ -169,10 +196,27 @@ function Dashboard() {
             <p className="animate-on-scroll text-sm font-mono text-[#f4f4f5] mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
+          {/* Projects */}
+          <div className="">
+            <div className="animate-on-scroll flex justify-between">
+              <p className="font-pixel text-md text-[#a0a0a8]">02 — projects</p>
+              <Link to="/projects" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+                ALL PROJECTS
+                <ArrowRight
+                  size={10}
+                  className="ml-1"
+                />
+              </Link>
+            </div>
+            <div className="mt-5 animate-on-scroll overflow-hidden">
+              <CoverflowCarousel items={projects} slideWidth={carouselSlideWidth} slideHeight={191} />
+            </div>
+          </div>
+
           {/* Stack*/}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">02 — tech stack</p>
+              <p className="font-pixel text-md text-[#a0a0a8]">03 — tech stack</p>
               <Link to="/tech-stack" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
@@ -214,38 +258,71 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Projects */}
+          {/* Education */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">03 — projects</p>
-              <Link to="/projects" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
-                ALL PROJECTS
+              <p className="font-pixel text-md text-[#a0a0a8]">04 — education</p>
+              <Link to="/education" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+                VIEW EDUCATION
                 <ArrowRight
                   size={10}
                   className="ml-1"
                 />
               </Link>
             </div>
-            <div className="mt-5 animate-on-scroll">
-              <CoverflowCarousel items={projects}  slideWidth={340} slideHeight={191} />
+            <div className="mt-5 space-y-3">
+              {Education.map((entry, i) => (
+                <div key={i} className="animate-on-scroll rounded-xl border border-[#2a2a30] bg-[#151518]/80 p-4 sm:p-5">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="font-pixel text-[#f4f4f5] font-bold text-sm sm:text-md wrap-break-word">{entry.degree}</p>
+                    <p className="font-mono text-xs text-[#8a8a92] sm:text-sm">{entry.date}</p>
+                  </div>
+                  <p className="mt-1 font-mono text-sm text-[#a0a0a8] wrap-break-word">{entry.school}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Socials */}
+          <div className="">
+            <div className="animate-on-scroll flex justify-between">
+              <p className="font-pixel text-md text-[#a0a0a8]">05 — socials</p>
+              <Link to="/socials" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+                VIEW SOCIALS
+                <ArrowRight
+                  size={10}
+                  className="ml-1"
+                />
+              </Link>
+            </div>
+            <div className="mt-5 space-y-0">
+              {socialMedias.map((entry, i) => (
+                <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-4">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm font-pixel text-white font-bold sm:text-md">{entry.platform}</p>
+                    <p className="text-[#a0a0a8] cursor-pointer text-xs font-mono flex flex-row items-center duration-200 transition hover:text-[#f4f4f5] break-all">{entry.username}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Github */}
           <div className="">
-            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">04 — github</p>
+            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">06 — github</p>
 
-            <div className="animate-on-scroll flex justify-center items-center mt-5 text-[#8a8a92] [&_svg]:overflow-visible">
-              <a href="https://github.com/eli-fstn" target="_blank">
+            <div className="animate-on-scroll [&_.react-activity-calendar__footer]:hidden mt-5 w-full overflow-x-auto font-mono text-[#8a8a92] [&_svg]:overflow-visible">
+              <a href="https://github.com/eli-fstn" target="_blank" className="inline-flex min-w-max justify-center">
                 <GitHubCalendar
                   username="eli-fstn"
                   colorScheme="light"
-                  blockSize={13}
+                  blockSize={15}
                   blockMargin={0}
-                  fontSize={12}
+                  fontSize={13}
+                  showColorLegend={false}
                   renderColorLegend={() => <></>}
                   renderBlock={(block, activity) => {
-                    const radiusByLevel = [1.1, 2.7, 3.8, 4.8, 5.7];
+                    const radiusByLevel = [1.5, 3, 4, 5, 6];
                     const radius = radiusByLevel[activity.level] ?? radiusByLevel[0];
                     const opacity = activity.count === 0 ? 0.12 : 0.92;
 
