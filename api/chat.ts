@@ -1,13 +1,5 @@
-import express, {Request, Response} from "express";
-import cors from "cors";
-import dotenv from "dotenv";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { GoogleGenAI } from "@google/genai";
-
-dotenv.config();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -232,7 +224,11 @@ The overall personality should feel like:
 Never make me sound more experienced than I am. The goal is for visitors to feel like they are actually talking to Elijah, not reading an AI-generated résumé.
 `;
 
-app.post("/api/chat", async (req: Request, res: Response) => {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed." });
+  }
+
   try {
     const { message } = req.body;
 
@@ -241,7 +237,7 @@ app.post("/api/chat", async (req: Request, res: Response) => {
     }
 
     const interaction = await ai.interactions.create({
-      model: "models/gemini-3-flash-preview",
+      model: "models/gemini-3.5-flash-lite",
       input: message,
       system_instruction: SYSTEM_INSTRUCTION,
     });
@@ -251,9 +247,4 @@ app.post("/api/chat", async (req: Request, res: Response) => {
     console.error("Chat error:", err);
     res.status(500).json({ error: "Something went wrong." });
   }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+}
