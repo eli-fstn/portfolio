@@ -1,7 +1,9 @@
-import Sidebar from "../components/layout/Sidebar"
+import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react"
 import { getTechStack } from "../data/techStack";
 import Boxes from "../components/ui/Boxes";
+import { ArrowLeft } from "lucide-react";
+import Footer from "../components/layout/Footer";
 
 function TechStack() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -31,20 +33,22 @@ function TechStack() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-[#0c0c0f] min-h-screen flex">
-
-      {/* SIDEBAR */}
-      <Sidebar />
-
-      {/* BODY */}
-      <div className="relative flex-1 px-50 pt-20">
+    <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
+        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center gap-2 text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
+          <span>
+            <ArrowLeft size={10} className="mr-1" />
+          </span>
+          go back
+        </Link>
 
         {/* Background Elements */}
         <div
           className="
             pointer-events-none
-            fixed top-0 left-50
-            w-70 h-70 z--10
+            fixed top-0 left-0
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(135deg,black_0%,transparent_75%)]
@@ -55,7 +59,8 @@ function TechStack() {
           className="
             pointer-events-none
             fixed bottom-0 right-0
-            w-70 h-70 z--10
+            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
             mask-[linear-gradient(315deg,black_0%,transparent_75%)]
@@ -73,7 +78,7 @@ function TechStack() {
         <div className="mt-20 flex flex-col gap-15">
           <div className="animate-on-scroll">
             <p className="text-[#a0a0a8] font-mono text-xs uppercase">Languages</p>
-            <div className="flex flex-row flex-wrap gap-3 mt-3">
+            <div className="mt-3 flex flex-wrap gap-3">
               {languages.map((language, i) => (
                 <Boxes 
                   key={i}
@@ -88,7 +93,7 @@ function TechStack() {
           
           <div className="animate-on-scroll">
             <p className="text-[#a0a0a8] font-mono text-xs uppercase">Frameworks</p>
-            <div className="flex flex-row flex-wrap gap-3 mt-3">
+            <div className="mt-3 flex flex-wrap gap-3">
               {frameworks.map((framework, i) => (
                 <Boxes 
                   key={i}
@@ -103,7 +108,7 @@ function TechStack() {
 
           <div className="animate-on-scroll">
             <p className="text-[#a0a0a8] font-mono text-xs uppercase">Tools</p>
-            <div className="flex flex-row flex-wrap gap-3 mt-3">
+            <div className="mt-3 flex flex-wrap gap-3">
               {tools.map((tool, i) => (
                 <Boxes 
                   key={i}
@@ -115,6 +120,10 @@ function TechStack() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="mt-20">
+          <Footer />
         </div>        
       </div>
     </div>

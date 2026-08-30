@@ -25,6 +25,8 @@ export default function CoverflowCarousel({
 }: CoverflowCarouselProps) {
   const [index, setIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const responsiveSlideWidth = Math.min(slideWidth, typeof window !== "undefined" ? window.innerWidth - 64 : slideWidth);
+  const responsiveSpacing = Math.min(spacing, Math.max(80, responsiveSlideWidth * 0.65));
 
   const goTo = useCallback(
     (i: number) => {
@@ -75,7 +77,7 @@ export default function CoverflowCarousel({
 
           const isCenter = offset === 0;
           const scale = isCenter ? 1 : Math.max(0.55, 1 - distance * 0.22);
-          const translateX = offset * spacing;
+          const translateX = offset * responsiveSpacing;
           const translateZ = isCenter ? 0 : -distance * 80;
           const rotateY = offset === 0 ? 0 : offset < 0 ? 35 : -35;
           const blurPx = isCenter ? 0 : Math.min(6, distance * 2.5);
@@ -89,7 +91,7 @@ export default function CoverflowCarousel({
               aria-label={item.title}
               className="absolute rounded-md overflow-hidden cursor-pointer bg-[#151518] transition-[transform,filter,opacity] duration-500 ease-out"
               style={{
-                width: slideWidth,
+                width: responsiveSlideWidth,
                 height: slideHeight,
                 transform: `translateX(${translateX}px) translateZ(${translateZ}px) scale(${scale}) rotateY(${rotateY}deg)`,
                 filter: `blur(${blurPx}px)`,
