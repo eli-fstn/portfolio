@@ -130,7 +130,7 @@ export default function CoverflowCarousel({
       {/* Title / description — swaps with a soft fade+rise each time index changes */}
       <div key={index} className="text-center coverflow-fade-in">
         <p className="font-pixel font-bold text-[#f4f4f5] text-[1.5rem]">{current.title}</p>
-        <p className="font-mono text-sm text-[#8a8a92] mt-2">{current.description}</p>
+        <p className="font-mono text-xs md:text-sm text-[#8a8a92] mt-2">{current.description}</p>
       </div>
 
       {/* Dots */}

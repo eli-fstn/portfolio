@@ -33,11 +33,11 @@ function Sidebar() {
           return (
             <Link key={i} to={entry.route}
               className={`inline-flex w-fit items-center transition duration-200 hover:text-[#f4f4f5]
-                ${isActive ? "text-white" : ""}
+                ${isActive ? "text-[#f4f4f5]" : ""}
               `}>
               {isActive ? (
                 <>
-                  <span><ArrowRight size={13} className="text-white mr-2"/></span>
+                  <span><ArrowRight size={13} className="text-[#f4f4f5] mr-2"/></span>
                   {entry.label}
                 </>
                 ) : (

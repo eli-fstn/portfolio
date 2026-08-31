@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react"
-import { getTechStack } from "../data/techStack";
+import { getTechStack } from "../data/portfolio";
 import Boxes from "../components/ui/Boxes";
 import { ArrowLeft } from "lucide-react";
 import Footer from "../components/layout/Footer";
@@ -35,9 +35,9 @@ function TechStack() {
   return (
     <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
-        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center gap-2 text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
+        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
           <span>
-            <ArrowLeft size={10} className="mr-1" />
+            <ArrowLeft size={13} className="mr-1" />
           </span>
           go back
         </Link>
