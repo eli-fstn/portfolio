@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowLeft, Mail } from "lucide-react";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import { useEffect, useRef } from "react";
-import { getSocialMedias } from "../data/portfolio";
+import { getSocialMedias } from "../data/portfolio.ts";
 
 function Socials() {
   const sectionRef = useRef<HTMLDivElement | null>(null);

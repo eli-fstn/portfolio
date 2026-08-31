@@ -1,6 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { GoogleGenAI } from "@google/genai";
-import { getProfile, getTechStack, getProjects, getEducation } from "../src/data/portfolio";
+import {
+  getProfile,
+  getTechStack,
+  getProjects,
+  getEducation
+} from "../src/data/portfolio.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 

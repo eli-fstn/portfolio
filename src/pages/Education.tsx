@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getEducation } from "../data/portfolio";
+import { getEducation } from "../data/portfolio.ts";
 import Boxes from "../components/ui/Boxes";
 import Footer from "../components/layout/Footer";
 
