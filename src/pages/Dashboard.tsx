@@ -77,7 +77,7 @@ function Dashboard() {
 
   return (
     <div className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
-      <div ref={sectionRef} className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 pt-20">
+      <div ref={sectionRef} className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 pt-20">
 
         {/* Background Elements */}
         <div
