@@ -1,13 +1,36 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ui/ProjectCard";
 import Footer from "../components/layout/Footer";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import { getProjects } from "../data/portfolio";
 
 function Projects() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const projects = getProjects();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const root = sectionRef.current;
+    if (!root) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = root.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
