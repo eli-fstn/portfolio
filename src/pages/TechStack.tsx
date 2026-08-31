@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react"
-import { getTechStack } from "../data/portfolio";
+import { getTechStack } from "../data/portfolio.ts";
 import Boxes from "../components/ui/Boxes";
 import { ArrowLeft } from "lucide-react";
 import Footer from "../components/layout/Footer";

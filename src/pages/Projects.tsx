@@ -3,7 +3,7 @@ import ProjectCard from "../components/ui/ProjectCard";
 import Footer from "../components/layout/Footer";
 import { useEffect, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
-import { getProjects } from "../data/portfolio";
+import { getProjects } from "../data/portfolio.ts";
 
 function Projects() {
   const sectionRef = useRef<HTMLDivElement | null>(null);

@@ -11,7 +11,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Hey, I'm Elijah! Ask anything about me ^^",
+      content: "Hey, I'm Elijah! feel free to ask anything about me.",
     },
   ]);
   const [input, setInput] = useState("");
