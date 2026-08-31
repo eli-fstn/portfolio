@@ -63,7 +63,7 @@ export default function ChatWidget() {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a30] bg-[#0f0f12]">
             <div>
-              <p className="font-pixel font-bold text-white text-sm">Elijah Festin</p>
+              <p className="font-pixel font-bold text-[#f4f4f5] text-sm">Elijah Festin</p>
               <p className="font-mono text-[10px] text-[#8a8a92] flex items-center gap-1 mt-0.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#27c93f]" />
                 Online
@@ -108,7 +108,7 @@ export default function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="ask me something..."
-              className="flex-1 bg-transparent font-mono text-xs text-white placeholder:text-[#8a8a92] outline-none max-h-24"
+              className="flex-1 bg-transparent font-mono text-xs text-[#f4f4f5] placeholder:text-[#8a8a92] outline-none max-h-24"
             />
             <button
               onClick={sendMessage}

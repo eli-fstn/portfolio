@@ -1,60 +1,20 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ui/ProjectCard";
 import Footer from "../components/layout/Footer";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ArrowLeft } from "lucide-react";
+import { getProjects } from "../data/portfolio";
 
 function Projects() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const root = sectionRef.current;
-    if (!root) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const elements = root.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const projects = [
-    {
-      title: "Kabsupanion",
-      type: "Front-end Dev | Web App",
-      stack: ["React", "TailwindCSS", "Javascript", "Vite"],
-      description:
-        "Kabsupanion is a section-centric student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
-      link: "https://kabsupanion.vercel.app"
-    },
-    {
-      title: "Echo - GWA Calculator",
-      type: "Web App",
-      stack: ["React", "TailwindCSS", "Typescript"],
-      description:
-        "Echo is a client-side web application for calculating a student's General Weighted Average (GWA) and predicting Latin honors. It provides a compact workflow for entering subjects (name, grade, units), reviewing weighted totals, configuring academic policy, and exporting a printable summary report as a PNG image.",
-      link: "https://echo-gwa-calculator.vercel.app"
-    },
-  ];
+  const projects = getProjects();
 
   return (
     <div ref={sectionRef} className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
-        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center gap-2 text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
+        <Link to="/" className="animate-on-scroll mb-10 inline-flex items-center text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">
           <span>
-            <ArrowLeft size={10} className="mr-1" />
+            <ArrowLeft size={13} className="mr-1" />
           </span>
           go back
         </Link>

@@ -7,7 +7,7 @@ export interface Project {
   title: string;
   description: string;
   type: string;
-  link: string;
+  link?: string;
 }
 
 interface CardProps {
@@ -43,7 +43,7 @@ export default function ProjectCard({ items }: CardProps) {
   return (
     <div ref={sectionRef} className="flex flex-col gap-10 w-full">
       {items.map((item, i) => (
-        <div key={i} className="animate-on-scroll rounded-xl p-5 bg-linear-to-br from-white/5 to-transparent">
+        <div key={i} className="animate-on-scroll rounded-xl p-5 bg-linear-to-br from-[#1f1f1f] to-[#151518]">
           <div className="">
             <div className="flex justify-between items-center">
               <p className="font-pixel font-bold text-[#f4f4f5] text-xl lg:text-[1.5rem]">{item.title}</p>
@@ -61,10 +61,10 @@ export default function ProjectCard({ items }: CardProps) {
               ))}
             </div>
             <p className="font-mono text-xs md:text-sm text-[#a0a0a8] mt-5">{item.description}</p>
-            <a href={item.link} rel="noferrer" target="_blank" className="transition duration-200 hover:text-white cursor-pointer font-pixel text-xs text-[#a0a0a8] mt-3 flex flex-row justify-end items-center">
+            <a href={item.link} rel="noferrer" target="_blank" className="transition duration-200 hover:text-[#f4f4f5] cursor-pointer font-pixel text-xs text-[#a0a0a8] mt-3 flex flex-row justify-end items-center">
               VISIT
               <span>
-                <ArrowUpRight size={13} className="ml-1" />
+                <ArrowUpRight size={15} className="ml-1" />
               </span>
             </a>
           </div>

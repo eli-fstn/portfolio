@@ -10,7 +10,7 @@ import PixelTransition from "../components/ui/PixelTransition";
 import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
 import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import CoverflowCarousel from "../components/ui/CoverflowCarousel";
-import { getTechStack } from "../data/techStack";
+import { getTechStack } from "../data/portfolio";
 
 interface EducationEntry {
   date: string;
@@ -77,7 +77,7 @@ function Dashboard() {
 
   return (
     <div className="relative z-0 bg-[#0c0c0f] min-h-screen overflow-x-hidden">
-      <div ref={sectionRef} className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 lg:pt-20">
+      <div ref={sectionRef} className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10 md:px-12 md:pt-14 lg:px-20 pt-20">
 
         {/* Background Elements */}
         <div
@@ -203,7 +203,7 @@ function Dashboard() {
               <Link to="/projects" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
-                  size={10}
+                  size={13}
                   className="ml-1"
                 />
               </Link>
@@ -220,7 +220,7 @@ function Dashboard() {
               <Link to="/tech-stack" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
-                  size={10}
+                  size={13}
                   className="ml-1"
                 />
               </Link>
@@ -265,7 +265,7 @@ function Dashboard() {
               <Link to="/education" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW EDUCATION
                 <ArrowRight
-                  size={10}
+                  size={13}
                   className="ml-1"
                 />
               </Link>
@@ -290,7 +290,7 @@ function Dashboard() {
               <Link to="/socials" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW SOCIALS
                 <ArrowRight
-                  size={10}
+                  size={13}
                   className="ml-1"
                 />
               </Link>
@@ -299,7 +299,7 @@ function Dashboard() {
               {socialMedias.map((entry, i) => (
                 <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-4">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm font-pixel text-white font-bold sm:text-md">{entry.platform}</p>
+                    <p className="text-sm font-pixel text-[#f4f4f5] font-bold sm:text-md">{entry.platform}</p>
                     <p className="text-[#a0a0a8] cursor-pointer text-xs font-mono flex flex-row items-center duration-200 transition hover:text-[#f4f4f5] break-all">{entry.username}</p>
                   </div>
                 </div>
@@ -312,7 +312,7 @@ function Dashboard() {
             <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">06 — github</p>
 
             <div className="animate-on-scroll [&_.react-activity-calendar__footer]:hidden mt-5 w-full overflow-x-auto font-mono text-[#8a8a92] [&_svg]:overflow-visible">
-              <a href="https://github.com/eli-fstn" target="_blank" className="inline-flex min-w-max justify-center">
+              <a href="https://github.com/eli-fstn" target="_blank" className="flex items-center justify-center">
                 <GitHubCalendar
                   username="eli-fstn"
                   colorScheme="light"
