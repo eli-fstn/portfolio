@@ -59,7 +59,7 @@ My current stack:
 - Languages: ${techStack.languages.join(", ")}
 - Frameworks & Libraries: ${techStack.frameworks.join(", ")}
 - Tools & Platforms: ${techStack.tools.join(", ")}
-- Currently learning: PostgreSQL, Express, SQL, TypeScript, React
+- Currently learning: ${techStack.currentLearning.join(", ")}
 
 My projects:
 ${projectsList}`;

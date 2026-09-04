@@ -3,12 +3,14 @@ export interface TechStack {
   languages: string[];
   frameworks: string[];
   tools: string[];
+  currentLearning: string[]
 }
 
 const techStack: TechStack = {
   languages: ["HTML", "CSS", "JavaScript", "TypeScript", "Java", "Python", "SQL"],
   frameworks: ["React", "TailwindCSS", "Express", "OpenCV", "Flask"],
   tools: ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"],
+  currentLearning: ["PostgreSQL", "Express", "React", "Typescript", "SQL"]
 };
 
 export function getTechStack(): TechStack {
@@ -79,7 +81,7 @@ const projects: Project[] = [
     type: "Front-end Dev | Web App",
     stack: ["React", "TailwindCSS", "Javascript", "Vite"],
     description:
-      "Kabsupanion is a section-centric student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
+      "Kabsupanion is a section-based student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
     link: "https://kabsupanion.vercel.app"
   },
   {
@@ -87,7 +89,7 @@ const projects: Project[] = [
     type: "Web App",
     stack: ["React", "TailwindCSS", "Typescript"],
     description:
-      "Echo is a client-side web application for calculating a student's General Weighted Average (GWA) and predicting Latin honors. It provides a compact workflow for entering subjects (name, grade, units), reviewing weighted totals, configuring academic policy, and exporting a printable summary report as a PNG image.",
+      "Echo is a web application for calculating a student's General Weighted Average (GWA) and predicting Latin honors. It provides a compact workflow for entering subjects (name, grade, units), reviewing weighted totals, configuring academic policy, and exporting a printable summary report as a PNG image.",
     link: "https://echo-gwa-calculator.vercel.app"
   },
   {
