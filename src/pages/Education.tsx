@@ -95,7 +95,7 @@ function Education() {
                 </div>
 
                 {/* content */}
-                <div className="min-w-0">
+                <div className="min-w-0 mt-1.5">
                   <p className="font-mono text-[10px] text-[#8a8a92] transition-colors duration-300 group-hover:text-[#a0a0a8] sm:text-xs">
                     {entry.date}
                   </p>

@@ -7,7 +7,7 @@ import Footer from "../components/layout/Footer";
 
 function TechStack() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const { languages, frameworks, tools } = getTechStack();
+  const { languages, frameworks, tools, currentLearning} = getTechStack();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -76,6 +76,21 @@ function TechStack() {
 
         {/* Main Content */}
         <div className="mt-20 flex flex-col gap-15">
+          <div className="animate-on-scroll">
+            <p className="text-[#a0a0a8] font-mono text-sm uppercase">Currently Learning</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              {currentLearning.map((language, i) => (
+                <Boxes 
+                  key={i}
+                  text={language}
+                  typography="text-sm"
+                  dimensions="px-4 py-1"
+                  designs="rounded font-semibold"
+                />
+              ))}
+            </div>
+          </div>
+          
           <div className="animate-on-scroll">
             <p className="text-[#a0a0a8] font-mono text-xs uppercase">Languages</p>
             <div className="mt-3 flex flex-wrap gap-3">
