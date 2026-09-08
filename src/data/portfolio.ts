@@ -8,7 +8,7 @@ export interface TechStack {
 
 const techStack: TechStack = {
   languages: ["HTML", "CSS", "JavaScript", "TypeScript", "Java", "Python", "SQL"],
-  frameworks: ["React", "TailwindCSS", "Express", "OpenCV", "Flask"],
+  frameworks: ["React", "TailwindCSS", "Express", "OpenCV"],
   tools: ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"],
   currentLearning: ["PostgreSQL", "Express", "React", "Typescript", "SQL"],
 };
@@ -25,7 +25,6 @@ export const techLogos: Record<string, string> = {
   tailwindcss: "https://cdn.simpleicons.org/tailwindcss",
   express: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
   opencv: "https://cdn.simpleicons.org/opencv",
-  flask: "https://cdn.simpleicons.org/flask",
   vscode: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
   git: "https://cdn.simpleicons.org/git",
   github: "https://cdn.simpleicons.org/github",
