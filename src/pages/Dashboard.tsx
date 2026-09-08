@@ -3,14 +3,14 @@ import { useEffect, useRef } from "react";
 import profile from "../assets/elijah-festin.jpeg";
 import profile2 from "../assets/yuta.jpg";
 import { Link } from "react-router-dom";
-import Boxes from "../components/ui/Boxes";
+import TechPill from "../components/ui/TechPill";
 import { GitHubCalendar } from "react-github-calendar";
 import Footer from "../components/layout/Footer";
 import PixelTransition from "../components/ui/PixelTransition";
 import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
 import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import CoverflowCarousel from "../components/ui/CoverflowCarousel";
-import { getTechStack } from "../data/portfolio";
+import { getTechLogo, getTechStack } from "../data/portfolio";
 
 interface EducationEntry {
   date: string;
@@ -227,31 +227,25 @@ function Dashboard() {
             </div>
             <div className="mt-5">
               <div className="animate-on-scroll flex flex-row flex-wrap gap-3 my-2">
-                {languages.map((language, i) => (
-                  <Boxes 
-                    key={i}
-                    text={language}
-                    typography="text-sm"
-                    dimensions="px-4 py-1"
-                    designs="rounded font-semibold"
+                {languages.map((language) => (
+                  <TechPill
+                    key={language}
+                    logoSrc={getTechLogo(language)}
+                    label={language}
                   />
                 ))}
-                {frameworks.map((framework, i) => (
-                  <Boxes 
-                    key={i}
-                    text={framework}
-                    typography="text-sm"
-                    dimensions="px-4 py-1"
-                    designs="rounded font-semibold"
+                {frameworks.map((framework) => (
+                  <TechPill
+                    key={framework}
+                    logoSrc={getTechLogo(framework)}
+                    label={framework}
                   />
                 ))}
-                {tools.map((tool, i) => (
-                  <Boxes 
-                    key={i}
-                    text={tool}
-                    typography="text-sm"
-                    dimensions="px-4 py-1"
-                    designs="rounded font-semibold"
+                {tools.map((tool) => (
+                  <TechPill
+                    key={tool}
+                    logoSrc={getTechLogo(tool)}
+                    label={tool}
                   />
                 ))}
               </div>
