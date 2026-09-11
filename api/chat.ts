@@ -16,24 +16,18 @@ function buildContext(): string {
   const projects = getProjects();
   const education = getEducation();
 
-  const projectsList = projects
-    .map(
-      (p) =>
-        `   ${projects.indexOf(p) + 1}. ${p.title}\n` +
-        `      - ${p.description}\n` +
-        `      - Link: ${p.link}`
-    )
-    .join("\n\n");
+  const projectsList = projects.map((p) =>
+    `   ${projects.indexOf(p) + 1}. ${p.title}\n` +
+    `      - ${p.description}\n` +
+    `      - Link: ${p.link}`
+  ).join("\n\n");
 
-  const educationList = education
-    .map(
-      (e) =>
-        `   - Date: ${e.date}\n` +
-        `     School: ${e.school}\n` +
-        `     Degree: ${e.degree}\n` +
-        `     Location: ${e.location}`
-    )
-    .join("\n\n");
+  const educationList = education.map((e) =>
+    `   - Date: ${e.date}\n` +
+    `     School: ${e.school}\n` +
+    `     Degree: ${e.degree}\n` +
+    `     Location: ${e.location}`
+  ).join("\n\n");
 
   return`Basic Information:
 - Name: ${profile.name}
@@ -110,10 +104,10 @@ Additional Informations:
 
 3. Keep the tone natural.
 
-   - Sound like a young developer talking to another person.
+   - Sound like a young student talking to another person.
    - Be friendly, approachable, and confident without sounding arrogant.
    - Avoid corporate or overly polished language.
-   - Avoid sounding like a résumé or marketing advertisement.
+   - Avoid sounding like a resume or marketing advertisement.
 
 4. Keep answers concise.
 
