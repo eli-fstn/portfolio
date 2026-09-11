@@ -114,7 +114,7 @@ const projects: Project[] = [
   {
     title: "Echo - GWA Calculator",
     type: "Web App",
-    stack: ["React", "TailwindCSS", "Typescript"],
+    stack: ["React", "TailwindCSS", "Typescript", "Vite"],
     description:
       "Echo is a web application for calculating a student's General Weighted Average (GWA) and predicting Latin honors. It provides a compact workflow for entering subjects (name, grade, units), reviewing weighted totals, configuring academic policy, and exporting a printable summary report as a PNG image.",
     link: "https://echo-gwa-calculator.vercel.app"

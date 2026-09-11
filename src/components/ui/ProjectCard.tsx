@@ -1,6 +1,7 @@
-import Boxes from "./Boxes";
 import { useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import TechPill from "./TechPill";
+import { getTechLogo } from "../../data/portfolio";
 
 export interface Project {
   stack: string[];
@@ -50,14 +51,8 @@ export default function ProjectCard({ items }: CardProps) {
               <p className="font-pixel font-bold text-[#8a8a92] text-xs md:text-sm">{item.type}</p>
             </div>
             <div className="flex flex-row flex-wrap gap-1 my-1">
-              {item.stack.map((s, j) => (
-                <Boxes
-                  key={j}
-                  text={s}
-                  typography="text-xs"
-                  dimensions="px-4 py-1"
-                  designs="rounded font-semibold"
-                />
+              {item.stack.map((tech) => (
+                <TechPill key={tech} logoSrc={getTechLogo(tech)} label={tech} />
               ))}
             </div>
             <p className="font-mono text-xs md:text-sm text-[#a0a0a8] mt-5">{item.description}</p>
