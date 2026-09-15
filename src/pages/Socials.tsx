@@ -74,8 +74,8 @@ function Socials() {
 
         {/* Header */}
         <div className="animate-on-scroll flex flex-col gap-5">
-          <p className="text-[#f4f4f5] font-pixel text-[2rem]">socials</p>
-          <p className="text-[#a0a0a8] text-sm font-mono">Find me online and connect with me through my social platforms.</p>
+          <p className="text-[#f4f4f5] font-pixel text-[1.5rem] sm:text-[2rem]">socials</p>
+          <p className="text-[#a0a0a8] text-xs sm:text-sm font-mono">Find me online and connect with me through my social platforms.</p>
         </div>
         
         <div className="animate-on-scroll mt-20">
@@ -84,9 +84,9 @@ function Socials() {
             <div className="grid grid-cols-1 gap-5 md:grid-cols-[2fr_1fr] md:items-center">
               <div className="min-w-0">
                 <p className="text-[#f4f4f5] font-bold font-pixel text-[1.25rem] sm:text-[1.5rem]">let's get in touch</p>
-                <p className="mt-1 text-[#a0a0a8] font-mono text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
+                <p className="mt-1 text-[#a0a0a8] font-mono text-xs sm:text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
               </div>
-              <div className="flex flex-col items-start justify-center md:items-end">
+              <div className="mt-5 md:mt-0 flex flex-col items-start justify-center md:items-end">
                 <Button
                   text={
                     <>
@@ -100,7 +100,7 @@ function Socials() {
                   disabled={false}
                   onClick={sendEmail}
                 />
-                <a href="mailto:festinelijah@gmail.com" className="mt-3 break-all text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">festinelijah@gmail.com</a>
+                <a href="mailto:festinelijah@gmail.com" className="mt-3 break-all text-xs sm:text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">festinelijah@gmail.com</a>
               </div>
             </div>
           </div>
@@ -108,15 +108,15 @@ function Socials() {
           {socialMedias.map((entry, i) => (
             <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-5 sm:py-6">
               <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-lg font-pixel text-[#f4f4f5] font-bold sm:text-xl">{entry.platform}</p>
-                <a href={entry.link} target="_blank" rel="noferrer" className="flex flex-row items-center text-xs font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] break-all">
+                <p className="text-base font-pixel text-[#f4f4f5] font-bold sm:text-xl">{entry.platform}</p>
+                <a href={entry.link} target="_blank" rel="noferrer" className="flex flex-row items-center text-xs sm:text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] break-all">
                   {entry.username}
                   <span>
                     <ArrowUpRight size={13} className="ml-1" />
                   </span>
                 </a>
               </div>
-              <p className="text-[#a0a0a8] font-mono text-sm">{entry.description}</p>
+              <p className="text-[#a0a0a8] font-mono text-xs sm:text-base">{entry.description}</p>
             </div>
           ))}
         </div>

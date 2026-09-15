@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export interface CoverflowItem {
   image: string;
@@ -9,11 +10,8 @@ export interface CoverflowItem {
 
 interface CoverflowCarouselProps {
   items: CoverflowItem[];
-  /** px distance between each slide's center */
   spacing?: number;
-  /** px width of the centered slide */
   slideWidth?: number;
-  /** px height of the centered slide */
   slideHeight?: number;
 }
 
@@ -27,6 +25,11 @@ export default function CoverflowCarousel({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const responsiveSlideWidth = Math.min(slideWidth, typeof window !== "undefined" ? window.innerWidth - 64 : slideWidth);
   const responsiveSpacing = Math.min(spacing, Math.max(80, responsiveSlideWidth * 0.65));
+  const navigate = useNavigate();
+
+  const goToProject = () => {
+    navigate("/projects")
+  };
 
   const goTo = useCallback(
     (i: number) => {
@@ -52,13 +55,11 @@ export default function CoverflowCarousel({
 
   return (
     <div className="w-full flex flex-col items-center select-none">
-      {/* Stage */}
       <div
         ref={containerRef}
         className="relative w-full flex items-center justify-center"
         style={{ height: slideHeight + 60, perspective: "1200px" }}
       >
-        {/* Prev button */}
         <button
           onClick={prev}
           disabled={index === 0}
@@ -72,7 +73,6 @@ export default function CoverflowCarousel({
           const offset = i - index;
           const distance = Math.abs(offset);
 
-          // only render nearby slides for perf, hide the rest
           if (distance > 3) return null;
 
           const isCenter = offset === 0;
@@ -87,7 +87,7 @@ export default function CoverflowCarousel({
           return (
             <button
               key={i}
-              onClick={() => goTo(i)}
+              onClick={goToProject}
               aria-label={item.title}
               className="absolute rounded-md overflow-hidden cursor-pointer bg-[#151518] transition-[transform,filter,opacity] duration-500 ease-out"
               style={{
@@ -100,12 +100,12 @@ export default function CoverflowCarousel({
                 transformStyle: "preserve-3d",
               }}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
               {!isCenter && (
                 <div className="absolute inset-0 bg-black/30" />
               )}
@@ -116,7 +116,6 @@ export default function CoverflowCarousel({
           );
         })}
 
-        {/* Next button */}
         <button
           onClick={next}
           disabled={index === items.length - 1}
@@ -127,13 +126,11 @@ export default function CoverflowCarousel({
         </button>
       </div>
 
-      {/* Title / description — swaps with a soft fade+rise each time index changes */}
       <div key={index} className="text-center coverflow-fade-in">
         <p className="font-pixel font-bold text-[#f4f4f5] text-[1.5rem]">{current.title}</p>
         <p className="font-mono text-xs md:text-sm text-[#8a8a92] mt-2">{current.description}</p>
       </div>
 
-      {/* Dots */}
       <div className="flex gap-2 mt-5">
         {items.map((_, i) => (
           <button
