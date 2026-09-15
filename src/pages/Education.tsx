@@ -68,8 +68,8 @@ function Education() {
 
         {/* Header */}
         <div className="animate-on-scroll flex flex-col gap-5">
-          <p className="text-[#f4f4f5] font-pixel text-[2rem]">education</p>
-          <p className="text-[#a0a0a8] text-sm font-mono">My academic journey and the foundation behind my path in technology.</p>
+          <p className="text-[#f4f4f5] font-pixel text-[1.5rem] sm:text-[2rem]">education</p>
+          <p className="text-[#a0a0a8] text-xs sm:text-sm font-mono">My academic journey and the foundation behind my path in technology.</p>
         </div>
 
         {/* Timeline */}
