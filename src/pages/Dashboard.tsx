@@ -192,15 +192,15 @@ function Dashboard() {
 
           {/* About Me */}
           <div className="">
-            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">01 — about me</p>
+            <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">01 — about me</p>
             <p className="animate-on-scroll text-sm font-mono text-[#f4f4f5] mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
           {/* Projects */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">02 — projects</p>
-              <Link to="/projects" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">02 — projects</p>
+              <Link to="/projects" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
                   size={13}
@@ -216,8 +216,8 @@ function Dashboard() {
           {/* Stack*/}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">03 — tech stack</p>
-              <Link to="/tech-stack" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">03 — tech stack</p>
+              <Link to="/tech-stack" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
                   size={13}
@@ -255,8 +255,8 @@ function Dashboard() {
           {/* Education */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">04 — education</p>
-              <Link to="/education" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">04 — education</p>
+              <Link to="/education" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW EDUCATION
                 <ArrowRight
                   size={13}
@@ -268,10 +268,10 @@ function Dashboard() {
               {Education.map((entry, i) => (
                 <div key={i} className="animate-on-scroll rounded-xl border border-[#2a2a30] bg-[#151518]/80 p-4 sm:p-5">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="font-pixel text-[#f4f4f5] font-bold text-sm sm:text-md wrap-break-word">{entry.degree}</p>
+                    <p className="font-pixel text-[#f4f4f5] font-bold text-sm sm:text-base wrap-break-word">{entry.degree}</p>
                     <p className="font-mono text-xs text-[#8a8a92] sm:text-sm">{entry.date}</p>
                   </div>
-                  <p className="mt-1 font-mono text-sm text-[#a0a0a8] wrap-break-word">{entry.school}</p>
+                  <p className="mt-1 font-mono text-xs sm:text-sm text-[#a0a0a8] wrap-break-word">{entry.school}</p>
                 </div>
               ))}
             </div>
@@ -280,8 +280,8 @@ function Dashboard() {
           {/* Socials */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-md text-[#a0a0a8]">05 — socials</p>
-              <Link to="/socials" className="text-md font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">05 — socials</p>
+              <Link to="/socials" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW SOCIALS
                 <ArrowRight
                   size={13}
@@ -293,7 +293,7 @@ function Dashboard() {
               {socialMedias.map((entry, i) => (
                 <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-4">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm font-pixel text-[#f4f4f5] font-bold sm:text-md">{entry.platform}</p>
+                    <p className="text-sm font-pixel text-[#f4f4f5] font-bold sm:text-base">{entry.platform}</p>
                     <p className="text-[#a0a0a8] cursor-pointer text-xs font-mono flex flex-row items-center duration-200 transition hover:text-[#f4f4f5] break-all">{entry.username}</p>
                   </div>
                 </div>
@@ -303,9 +303,9 @@ function Dashboard() {
 
           {/* Github */}
           <div className="">
-            <p className="animate-on-scroll font-pixel text-md text-[#a0a0a8]">06 — github</p>
+            <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">06 — github</p>
 
-            <div className="animate-on-scroll [&_.react-activity-calendar__footer]:hidden mt-5 w-full overflow-x-auto font-mono text-[#8a8a92] [&_svg]:overflow-visible">
+            <div className="animate-on-scroll mt-5 w-full font-mono text-[#8a8a92] overflow-hidden [&_svg]:w-full [&_svg]:h-auto [&_svg]:max-w-full">
               <a href="https://github.com/eli-fstn" target="_blank" className="flex items-center justify-center">
                 <GitHubCalendar
                   username="eli-fstn"

@@ -76,16 +76,16 @@ function TechStack() {
 
         {/* Header */}
         <div className="animate-on-scroll flex flex-col gap-5">
-          <p className="text-[#f4f4f5] font-pixel text-[2rem]">tech stack</p>
-          <p className="text-[#a0a0a8] text-sm font-mono">The languages, frameworks, libraries, and tools I use to build my projects.</p>
+          <p className="text-[#f4f4f5] font-pixel text-[1.5rem] sm:text-[2rem]">tech stack</p>
+          <p className="text-[#a0a0a8] text-xs sm:text-sm font-mono">The languages, frameworks, libraries, and tools I use to build my projects.</p>
         </div>
 
         {/* Main Content */}
         <div className="mt-20 flex flex-col gap-15">
           {categories.map(({ label, items }) => (
             <div key={label} className="animate-on-scroll">
-              <p className={`text-[#a0a0a8] font-mono uppercase ${label === "Currently Learning" ? "text-sm" : "text-xs"}`}>{label}</p>
-              <div className="mt-3 flex flex-wrap gap-3">
+              <p className={`text-[#a0a0a8] font-mono uppercase text-xs sm:text-sm`}>{label}</p>
+              <div className="mt-5 flex flex-wrap gap-3">
                 {items.map((tech) => (
                   <TechPill key={tech} logoSrc={getTechLogo(tech)} label={tech} />
                 ))}

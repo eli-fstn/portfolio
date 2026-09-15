@@ -15,7 +15,7 @@ function TechPill({ logoSrc, label }: TechPillProps) {
           src={logoSrc}
           alt=""
           aria-hidden="true"
-          className="h-[1em] w-[1em] shrink-0"
+          className="h-[0.8em] w-[0.8em] md:h-[1em] md:w-[1em] shrink-0"
           onError={() => setLogoFailed(true)}
         />
       ) : (
@@ -23,7 +23,7 @@ function TechPill({ logoSrc, label }: TechPillProps) {
           ◆
         </span>
       )}
-      <span>{label}</span>
+      <span className="text-xs md:text-sm">{label}</span>
     </span>
   );
 }

@@ -44,7 +44,7 @@ export default function ProjectCard({ items }: CardProps) {
   return (
     <div ref={sectionRef} className="flex flex-col gap-10 w-full">
       {items.map((item, i) => (
-        <div key={i} className="animate-on-scroll rounded-xl p-5 bg-linear-to-br from-[#1f1f1f] to-[#151518]">
+        <div key={i} className="animate-on-scroll rounded-xl p-5 bg-linear-to-br from-[#1f1f1f] to-[#0b0b0c]">
           <div className="">
             <div className="flex justify-between items-center">
               <p className="font-pixel font-bold text-[#f4f4f5] text-xl lg:text-[1.5rem]">{item.title}</p>
