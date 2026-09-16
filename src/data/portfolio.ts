@@ -9,7 +9,7 @@ export interface TechStack {
 const techStack: TechStack = {
   languages: ["HTML", "CSS", "JavaScript", "TypeScript", "Java", "Python", "SQL"],
   frameworks: ["React", "TailwindCSS", "Express", "OpenCV"],
-  tools: ["VSCode", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"],
+  tools: ["Visual Studio Code", "Git", "Github", "Github Actions", "Figma", "Node.js", "Vite", "Vercel", "Postgresql"],
   currentLearning: ["PostgreSQL", "Express", "React", "Typescript", "SQL"],
 };
 
@@ -18,21 +18,21 @@ export const techLogos: Record<string, string> = {
   css: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
   javascript: "https://cdn.simpleicons.org/javascript",
   typescript: "https://cdn.simpleicons.org/typescript",
-  java: "https://cdn.simpleicons.org/openjdk",
+  java: "https://cdn.simpleicons.org/openjdk/437291",
   python: "https://cdn.simpleicons.org/python",
   sql: "https://cdn.simpleicons.org/sqlite",
   react: "https://cdn.simpleicons.org/react",
   tailwindcss: "https://cdn.simpleicons.org/tailwindcss",
-  express: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+  express: "https://cdn.simpleicons.org/express/ffffff",
   opencv: "https://cdn.simpleicons.org/opencv",
-  vscode: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+  "visual studio code": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
   git: "https://cdn.simpleicons.org/git",
   github: "https://cdn.simpleicons.org/github",
   "github actions": "https://cdn.simpleicons.org/githubactions",
   figma: "https://cdn.simpleicons.org/figma",
   "node.js": "https://cdn.simpleicons.org/nodedotjs",
   vite: "https://cdn.simpleicons.org/vite",
-  vercel: "https://cdn.simpleicons.org/vercel",
+  vercel: "https://cdn.simpleicons.org/vercel/ffffff",
   postgresql: "https://cdn.simpleicons.org/postgresql",
 };
 
@@ -61,9 +61,7 @@ const education: EducationEntry[] = [
     degree: "Bachelor of Science in Computer Science",
     school: "Cavite State University — Imus Campus",
     location: "Imus, Cavite",
-    description:
-      "Currently pursuing a BSCS degree while developing my skills in software development, web technologies, programming, and computer science fundamentals.",
-    tags: ["Computer Science", "Software Development", "Web Development", "IoT"],
+    description: "Currently pursuing a BSCS degree while developing my skills in software development, web technologies, programming, and computer science fundamentals.",
     current: true,
   },
   {
@@ -71,9 +69,7 @@ const education: EducationEntry[] = [
     degree: "Senior High School — ICT",
     school: "St. Matthew Academy of Cavite",
     location: "Bacoor, Cavite",
-    description:
-      "Studied Information and Communications Technology with a focus on java programming, and basics of web development.",
-    tags: ["ICT", "Programming", "Web Development"],
+    description: "Studied Information and Communications Technology with a focus on java programming, and basics of web development.",
   },
   {
     date: "2019 — 2023",
@@ -91,6 +87,26 @@ const education: EducationEntry[] = [
 
 export function getEducation(): EducationEntry[] {
   return education;
+}
+
+export interface Experience {
+  title: string;
+  position: string;
+  date: string;
+  description: string;
+}
+
+const experiences: Experience[] = [
+  {
+    title: "Computer Science Clique (CSC)",
+    position: "Internal Affairs Committee",
+    date: "2025 - 2026",
+    description: "Maintained and organized the organization's online documents, including Google Forms, certificates, and other digital records."
+  }
+]
+
+export function getExperience(): Experience[] {
+  return experiences;
 }
 
 // Projects

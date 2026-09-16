@@ -4,7 +4,8 @@ import {
   getProfile,
   getTechStack,
   getProjects,
-  getEducation
+  getEducation,
+  getExperience,
 } from "../src/data/portfolio.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -15,6 +16,7 @@ function buildContext(): string {
   const techStack = getTechStack();
   const projects = getProjects();
   const education = getEducation();
+  const experience = getExperience();
 
   const projectsList = projects.map((p) =>
     `   ${projects.indexOf(p) + 1}. ${p.title}\n` +
@@ -29,35 +31,46 @@ function buildContext(): string {
     `     Location: ${e.location}`
   ).join("\n\n");
 
-  return`Basic Information:
-- Name: ${profile.name}
-- Nickname: ${profile.nickname}
-- Age: ${profile.age}
-- Birthday: ${profile.birthday}
-- Gender: ${profile.gender}
-- Location: ${profile.location}
-- Education: ${profile.education}
-- Status: ${profile.status}
-- Goal: ${profile.goal}
+  const experienceList = experience.map((e) =>
+    `   - Date: ${e.date}\n` +
+    `     Job / Organization: ${e.title}\n` +
+    `     Position: ${e.position}\n` +
+    `     Descrption: ${e.description}`
+  ).join("\n\n");
 
-Socials | Social Medias | Accounts:
-- Facebook: ${profile.facebook}
-- Github: ${profile.github}
-- Email: ${profile.email}
-- Instagram: ${profile.instagram}
+  return`
+    Basic Information:
+      - Name: ${profile.name}
+      - Nickname: ${profile.nickname}
+      - Age: ${profile.age}
+      - Birthday: ${profile.birthday}
+      - Gender: ${profile.gender}
+      - Location: ${profile.location}
+      - Education: ${profile.education}
+      - Status: ${profile.status}
+      - Goal: ${profile.goal}
 
-Education:
-${educationList}
+    Socials | Social Medias | Accounts:
+      - Facebook: ${profile.facebook}
+      - Github: ${profile.github}
+      - Email: ${profile.email}
+      - Instagram: ${profile.instagram}
 
-My current stack:
-- Languages: ${techStack.languages.join(", ")}
-- Frameworks & Libraries: ${techStack.frameworks.join(", ")}
-- Tools & Platforms: ${techStack.tools.join(", ")}
-- Currently learning: ${techStack.currentLearning.join(", ")}
+    Education:
+      ${educationList}
 
-My projects:
-${projectsList}`;
-}
+    Experience:
+      ${experienceList}
+
+    My current stack:
+      - Languages: ${techStack.languages.join(", ")}
+      - Frameworks & Libraries: ${techStack.frameworks.join(", ")}
+      - Tools & Platforms: ${techStack.tools.join(", ")}
+      - Currently learning: ${techStack.currentLearning.join(", ")}
+
+    My projects:
+      ${projectsList}`;
+  }
 
 const SYSTEM_INSTRUCTION = `
 # [ROLE]
