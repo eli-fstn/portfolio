@@ -124,7 +124,7 @@ function Education() {
                       <Boxes
                         key={j}
                         text={tag}
-                        typography="text-xs"
+                        typography="text-xs md:text-sm"
                         dimensions="px-3 py-1"
                         designs="rounded font-semibold"
                       />

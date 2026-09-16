@@ -23,6 +23,13 @@ interface Socials {
   username: string;
 }
 
+interface Experience {
+  title: string;
+  position: string;
+  date: string;
+  description: string;
+}
+
 function Dashboard() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const { languages, frameworks, tools } = getTechStack();
@@ -44,6 +51,15 @@ function Dashboard() {
     {platform: "Facebook", username: "Elijah Festin", },
     {platform: "Instagram", username: "e.fstn_",},
     {platform: "Github", username: "eli-fstn",},
+  ]
+
+  const Experiences: Experience[] = [
+    {
+      title: "Computer Science Clique (CSC)",
+      position: "Internal Affairs Committee",
+      date: "2025 - 2026",
+      description: "Maintained and organized the organization's online documents, including Google Forms, certificates, and other digital records."
+    }
   ]
 
   const projects = [
@@ -196,10 +212,27 @@ function Dashboard() {
             <p className="animate-on-scroll text-sm font-mono text-[#f4f4f5] mt-5">I'm a second-year Bachelor of Science in Computer Science student at Cavite State University – Imus Campus, with a passion for software development and building practical applications. I'm continuously learning and improving my skills in web development while aspiring to become a Software Engineer.</p>
           </div>
 
+          {/* Experience */}
+          <div className="">
+            <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">02 — experience</p>
+            <div className="mt-5 space-y-3">
+              {Experiences.map((entry, i) => (
+                <div key={i} className="animate-on-scroll rounded-xl border border-[#2a2a30] bg-linear-to-b from-[#101014] to-[#0c0c0f] p-4 sm:p-5">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="font-pixel text-[#f4f4f5] font-bold text-sm sm:text-base wrap-break-word">{entry.title}</p>
+                    <p className="font-mono text-xs text-[#8a8a92] sm:text-sm">{entry.date}</p>
+                  </div>
+                  <p className="mt-1 md:mt-0 font-mono text-xs sm:text-sm text-[#a0a0a8] wrap-break-word">{entry.position}</p>
+                  <p className="mt-3 font-mono text-xs sm:text-sm text-[#f4f4f5] wrap-break-word">{entry.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Projects */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">02 — projects</p>
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">03 — projects</p>
               <Link to="/projects" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 ALL PROJECTS
                 <ArrowRight
@@ -216,7 +249,7 @@ function Dashboard() {
           {/* Stack*/}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">03 — tech stack</p>
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">04 — tech stack</p>
               <Link to="/tech-stack" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW STACK
                 <ArrowRight
@@ -255,7 +288,7 @@ function Dashboard() {
           {/* Education */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">04 — education</p>
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">05 — education</p>
               <Link to="/education" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW EDUCATION
                 <ArrowRight
@@ -280,7 +313,7 @@ function Dashboard() {
           {/* Socials */}
           <div className="">
             <div className="animate-on-scroll flex justify-between">
-              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">05 — socials</p>
+              <p className="font-pixel text-sm sm:text-base text-[#a0a0a8]">06 — socials</p>
               <Link to="/socials" className="text-xs sm:text-base font-pixel text-[#8a8a92] font-medium flex flex-row items-center cursor-pointer transition duration-150 hover:translate-x-1 hover:text-[#f4f4f5]">
                 VIEW SOCIALS
                 <ArrowRight
@@ -303,7 +336,7 @@ function Dashboard() {
 
           {/* Github */}
           <div className="">
-            <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">06 — github</p>
+            <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">07 — github</p>
 
             <div className="animate-on-scroll mt-5 w-full font-mono text-[#8a8a92] overflow-hidden [&_svg]:w-full [&_svg]:h-auto [&_svg]:max-w-full">
               <a href="https://github.com/eli-fstn" target="_blank" className="flex items-center justify-center">
