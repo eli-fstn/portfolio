@@ -1,4 +1,4 @@
-import { BadgeCheck, ArrowUpRight, MapPin, ArrowRight } from "lucide-react"
+import { BadgeCheck, ArrowUpRight, MapPin, ArrowRight, Mail } from "lucide-react"
 import { useEffect, useRef } from "react";
 import profile from "../assets/elijah-festin.jpeg";
 import profile2 from "../assets/yuta.jpg";
@@ -11,6 +11,7 @@ import kabsupanion from "../assets/projects/kabsupanion/Kabsupanion.png";
 import echo from "../assets/projects/echo-gwa-calculator/Echo.png";
 import CoverflowCarousel from "../components/ui/CoverflowCarousel";
 import { getTechLogo, getTechStack } from "../data/portfolio";
+import Button from "../components/ui/Button";
 
 interface EducationEntry {
   date: string;
@@ -67,6 +68,10 @@ function Dashboard() {
     { image: echo, title: "Echo - GWA Calculator", description: "A GWA calculator that helps students predict their final GWA, and track their progress toward Latin honors before official grades are released." },
   ];
   const carouselSlideWidth = Math.min(340, typeof window !== "undefined" ? window.innerWidth - 56 : 340);
+
+  const sendEmail = () => {
+    window.open("mailto:festinelijah@gmail.com?subject=Collaboration", "_blank");
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -373,6 +378,32 @@ function Dashboard() {
                   }}
                 />
               </a>
+            </div>
+          </div>
+
+          {/* Social */}
+          <div className="animate-on-scroll mt-5 rounded-xl border border-[#2a2a30] bg-[#151518]/80 p-5 sm:p-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-[2fr_1fr] md:items-center">
+              <div className="min-w-0">
+                <p className="text-[#f4f4f5] font-bold font-pixel text-[1.25rem] sm:text-[1.5rem]">let's get in touch</p>
+                <p className="mt-1 text-[#a0a0a8] font-mono text-xs sm:text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
+              </div>
+              <div className="mt-3 md:mt-0 flex flex-col items-start justify-center md:items-end">
+                <Button
+                  text={
+                    <>
+                      <Mail className="mr-2 w-3 h-3 md:w-4 md:h-4" />
+                      Get in touch
+                    </>
+                  }
+                  typography="font-mono text-xs md:text-sm text-black font-semibold"
+                  dimensions="px-4 py-2 md:px-6 md:py-3"
+                  designs="bg-white rounded-md"
+                  disabled={false}
+                  onClick={sendEmail}
+                />
+                <a href="mailto:festinelijah@gmail.com" className="mt-3 break-all text-xs sm:text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">festinelijah@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>
