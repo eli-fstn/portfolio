@@ -124,7 +124,7 @@ const projects: Project[] = [
     type: "Front-end Dev | Web App",
     stack: ["React", "TailwindCSS", "Javascript", "Vite"],
     description:
-      "Kabsupanion is a section-based student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment.",
+      "Kabsupanion is a section-based student portal developed to support the academic needs of students through a centralized and accessible platform. It streamlines academic organization by providing tools for task management, scheduling, activity tracking, and collaborative resource sharing within a section-based environment. DISCLAIMER: This is only accesible for our block.",
     link: "https://kabsupanion.vercel.app"
   },
   {
