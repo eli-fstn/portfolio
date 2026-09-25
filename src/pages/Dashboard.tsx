@@ -105,7 +105,7 @@ function Dashboard() {
           className="
             pointer-events-none
             fixed top-0 left-0
-            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            h-72 w-72 sm:h-80 sm:w-80 md:h-150 md:w-150
             -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
@@ -117,7 +117,7 @@ function Dashboard() {
           className="
             pointer-events-none
             fixed bottom-0 right-0
-            h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96
+            h-72 w-72 sm:h-80 sm:w-80 md:h-150 md:w-150
             -z-10
             bg-[radial-gradient(#2a2a30_1px,transparent_1px)]
             bg-size-[15px_15px]
@@ -382,27 +382,43 @@ function Dashboard() {
           </div>
 
           {/* Social */}
-          <div className="animate-on-scroll mt-5 rounded-xl border border-[#2a2a30] bg-[#151518]/80 p-5 sm:p-6">
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-[2fr_1fr] md:items-center">
-              <div className="min-w-0">
-                <p className="text-[#f4f4f5] font-bold font-pixel text-[1.25rem] sm:text-[1.5rem]">let's get in touch</p>
-                <p className="mt-1 text-[#a0a0a8] font-mono text-xs sm:text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
+          <div className="animate-on-scroll mt-5 rounded-xl border border-[#2a2a30] bg-[#0c0c0f] overflow-hidden font-mono shadow-2xl">
+            {/* Terminal title bar */}
+            <div className="flex items-center gap-2 border-b border-[#2a2a30] bg-[#151518] px-4 py-2.5">
+              <div className="flex gap-1.5">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
               </div>
-              <div className="mt-3 md:mt-0 flex flex-col items-start justify-center md:items-end">
-                <Button
-                  text={
-                    <>
-                      <Mail className="mr-2 w-3 h-3 md:w-4 md:h-4" />
-                      Get in touch
-                    </>
-                  }
-                  typography="font-mono text-xs md:text-sm text-black font-semibold"
-                  dimensions="px-4 py-2 md:px-6 md:py-3"
-                  designs="bg-white rounded-md"
-                  disabled={false}
-                  onClick={sendEmail}
-                />
-                <a href="mailto:festinelijah@gmail.com" className="mt-3 break-all text-xs sm:text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5]">festinelijah@gmail.com</a>
+              <p className="ml-2 text-[#8a8a92] text-xs">elijah@portfolio: ~/contact</p>
+            </div>
+
+            {/* Terminal body */}
+            <div className="p-5 sm:p-6">
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-[2fr_1fr] md:items-center">
+                <div className="min-w-0">
+                  <p className="text-[#27c93f] text-xs sm:text-sm"><span className="text-[#8a8a92]">$</span> ./contact.sh</p>
+                  <p className="mt-2 text-[#f4f4f5] font-bold font-pixel text-[1.25rem] sm:text-[1.5rem]">let's get in touch<span className="ml-1 inline-block w-1 h-6 bg-[#f4f4f5] align-middle animate-pulse" /></p>
+                  <p className="mt-2 text-[#a0a0a8] text-xs sm:text-sm leading-relaxed">Whether you have a project in mind, want to collaborate, or simply want to connect, feel free to reach out.</p>
+                </div>
+                <div className="mt-3 md:mt-0 flex flex-col items-start justify-center md:items-end">
+                  <Button
+                    text={
+                      <>
+                        <Mail className="mr-2 w-3 h-3 md:w-4 md:h-4" />
+                        Get in touch
+                      </>
+                    }
+                    typography="font-mono text-xs md:text-sm text-black font-semibold"
+                    dimensions="px-4 py-2 md:px-6 md:py-3"
+                    designs="bg-white rounded-md"
+                    disabled={false}
+                    onClick={sendEmail}
+                  />
+                  <p className="mt-3 break-all text-xs sm:text-sm text-[#27c93f] transition duration-200 hover:text-[#f4f4f5]">
+                    <span className="text-[#8a8a92]">&gt;</span> festinelijah@gmail.com
+                  </p>
+                </div>
               </div>
             </div>
           </div>
