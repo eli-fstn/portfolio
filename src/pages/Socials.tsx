@@ -107,7 +107,7 @@ function Socials() {
 
           {socialMedias.map((entry, i) => (
             <div key={i} className="animate-on-scroll border-y border-y-[#2a2a30] py-5 sm:py-6">
-              <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mb-1 flex gap-1 sm:flex-row items-center justify-between">
                 <p className="text-base font-pixel text-[#f4f4f5] font-bold sm:text-xl">{entry.platform}</p>
                 <a href={entry.link} target="_blank" rel="noferrer" className="flex flex-row items-center text-xs sm:text-sm font-mono text-[#a0a0a8] transition duration-200 hover:text-[#f4f4f5] break-all">
                   {entry.username}
