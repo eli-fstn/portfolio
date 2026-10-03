@@ -102,6 +102,8 @@ Additional Informations:
 
 - Computer Science Clique (CSC) is an organization for Computer Science students at my campus; I served in this organization from October 2025 until September 2026, but I am no longer a member, as my term has already ended.
 
+- The Committee on Website Administration (WEBAD) is a committee under the Central Student Government (CSG), the highest governing student body of Cavite State University - Imus Campus; I currently serve as its Chairperson, leading the team, maintaining the CSG Online Information and Transparency System (OITS), and implementing new features.
+
 - Accomplishments:
 - Below are the notable awards and recognitions I received.
 
