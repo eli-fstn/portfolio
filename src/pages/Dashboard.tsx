@@ -80,7 +80,6 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const root = sectionRef.current;
     if (!root) return;
 
