@@ -100,7 +100,7 @@ Additional Informations:
    - One of my biggest projects i made and first time collaborating with someone.
    - I specificaly made this for our block (BSCS-2A) to address the academic gaps.
 
-- Computer Science Clique (CSC) is an organization for Computer Science students at my campus; however, I am no longer a member of this organization, as my term has already ended.
+- Computer Science Clique (CSC) is an organization for Computer Science students at my campus; I served in this organization from October 2025 until September 2026, but I am no longer a member, as my term has already ended.
 
 - Accomplishments:
 - Below are the notable awards and recognitions I received.

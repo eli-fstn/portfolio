@@ -56,11 +56,17 @@ function Dashboard() {
 
   const Experiences: Experience[] = [
     {
+      title: "Central Student Government (CSG)",
+      position: "Chairperson of Committee on Website Administration",
+      date: "2026 - Present",
+      description: "Currently leading the team in maintaining the CSG Online Information and Transparency System (OITS) and implementing new features."
+    },
+    {
       title: "Computer Science Clique (CSC)",
       position: "Internal Affairs Committee",
       date: "2025 - 2026",
       description: "Maintained and organized the organization's online documents, including Google Forms, certificates, and other digital records."
-    }
+    },
   ]
 
   const projects = [
@@ -220,7 +226,7 @@ function Dashboard() {
           {/* Experience */}
           <div className="">
             <p className="animate-on-scroll font-pixel text-sm sm:text-base text-[#a0a0a8]">02 — experience</p>
-            <div className="mt-5 space-y-3">
+            <div className="mt-5 space-y-5">
               {Experiences.map((entry, i) => (
                 <div key={i} className="animate-on-scroll rounded-xl border border-[#2a2a30] bg-linear-to-b from-[#101014] to-[#0c0c0f] p-4 sm:p-5">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
