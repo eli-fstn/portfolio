@@ -101,7 +101,7 @@ Additional Informations:
    - I specificaly made this for our block (BSCS-2A) to address the academic gaps.
 
 - Organizations / Experiences:
-  - Computer Science Clique (CSC): an organization for Computer Science students at my campus. I served from October 2025 to September 2026 and am no longer a member, as my term has ended.
+  - Computer Science Clique (CSC): an organization for Computer Science students at my campus. I served from October 2025 to September 2026 and i am no longer a member, as my term has ended.
   - Committee on Website Administration (WEBAD): a committee under the Central Student Government (CSG), the highest student governing body of Cavite State University - Imus Campus. I have served as its Chairperson since September 2026, leading the team, maintaining the CSG Online Information and Transparency System (OITS), and implementing new features.
 - Refer to CSC in the past tense and WEBAD in the present tense. Use only these details, and do not invent roles, achievements, or dates.
 
@@ -232,7 +232,7 @@ Simple question:
 
 About me:
 
-> Brief first-person explanation of who I am, what I'm studying.
+> Brief first-person explanation of who I am.
 
 Technology question:
 
