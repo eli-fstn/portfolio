@@ -62,6 +62,12 @@ function Dashboard() {
       description: "Currently leading the team in maintaining the CSG Online Information and Transparency System (OITS) and implementing new features."
     },
     {
+      title: "Web Developer",
+      position: "Project-based",
+      date: "2025 - Present",
+      description: "Exploring web development through hands-on learning and self-directed projects, continuously building and growing as a developer."
+    },
+    {
       title: "Computer Science Clique (CSC)",
       position: "Internal Affairs Committee",
       date: "2025 - 2026",
