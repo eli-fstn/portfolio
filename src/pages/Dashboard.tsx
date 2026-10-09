@@ -171,7 +171,7 @@ function Dashboard() {
             {/* Information */}
             <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
               <div>
-                <p className="flex flex-row items-center justify-center gap-2 font-bold font-pixel text-[#f4f4f5] text-[1.5rem] sm:text-[2rem] sm:justify-start">
+                <h1 className="flex flex-row items-center justify-center gap-2 font-bold font-pixel text-[#f4f4f5] text-[1.5rem] sm:text-[2rem] sm:justify-start">
                   Elijah Festin
                   <span className="inline-flex">
                     <BadgeCheck
@@ -179,7 +179,7 @@ function Dashboard() {
                       className="fill-blue-500 text-[#0c0c0f] sm:size-7.5"
                     />
                   </span>
-                </p>
+                </h1>
 
                 <p className="mt-1 flex flex-row items-center justify-center text-[#a0a0a8] text-sm sm:justify-start">
                   <MapPin
@@ -234,7 +234,7 @@ function Dashboard() {
             <div className="mt-5 space-y-5">
               {Experiences.map((entry, i) => (
                 <div key={i} className="animate-on-scroll rounded-xl border border-[#2a2a30] bg-linear-to-b from-[#101014] to-[#0c0c0f] p-4 sm:p-5">
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex gap-2 flex-row items-center justify-between">
                     <p className="font-pixel text-[#f4f4f5] font-bold text-sm sm:text-base wrap-break-word">{entry.title}</p>
                     <p className="font-mono text-xs text-[#8a8a92] sm:text-sm">{entry.date}</p>
                   </div>
