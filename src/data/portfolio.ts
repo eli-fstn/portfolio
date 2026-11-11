@@ -191,7 +191,7 @@ const profile: Profile = {
   birthday: "November 20, 2006",
   gender: "Male",
   location: "Bacoor, Cavite, Philippines",
-  education: "2nd-year BS Computer Science student at Cavite State University – Imus Campus",
+  education: "2nd-year BS Computer Science student at Cavite State University – Imus City Campus",
   status: "Single",
   goal: "Aspiring Software Engineer | current focus is Front-end",
   email: "festinelijah@gmail.com",
